@@ -12,4 +12,6 @@ describe Procedure do
     expect(procedure.instructions).to eq("cut things up")
   end
 
+
+
 end
