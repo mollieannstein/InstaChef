@@ -1,7 +1,5 @@
 class Procedure < ActiveRecord::Base
-  has_many :RecipeProcedures through: :recipes
-
-
-
+  has_many :recipeprocedures
+  has_many :recipes through: :recipeprocedures
 
 end
