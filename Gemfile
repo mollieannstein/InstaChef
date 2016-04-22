@@ -38,9 +38,7 @@ gem "less-rails"
 gem "twitter-bootstrap-rails"
 
 # add mechanize and allrecipes
-gem 'nokogiri'
 gem 'allrecipes'
-gem 'mechanize'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

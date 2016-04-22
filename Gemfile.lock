@@ -186,8 +186,6 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   less-rails
-  mechanize
-  nokogiri
   pg (~> 0.15)
   rails (= 4.2.6)
   rake
