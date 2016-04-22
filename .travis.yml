@@ -11,3 +11,5 @@ before_script:
 test:
   adapter: postgresql
   database: travis_ci_test
+
+script: rspec spec
