@@ -32,9 +32,16 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+# add rails bootstrap with less for customization
 gem "therubyracer"
 gem "less-rails"
 gem "twitter-bootstrap-rails"
+
+# add mechanize and allrecipes
+gem 'nokogiri'
+gem 'allrecipes'
+gem 'mechanize'
+gem 'rest-open-uri'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
