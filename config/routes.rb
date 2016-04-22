@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+
+  get 'recipes/search' => 'recipes#search'
+  get 'recipes/show' => 'recipes#show'
+
+  root "dashboard#index"
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
