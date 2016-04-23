@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
 
-  get '/recipes/show' => 'recipes#show'
-
   get '/recipes/search' => 'recipes#search'
+
+
+  resources :recipes, only: [:show]
 
   resources :procedures, only: [:show]
 

@@ -1,17 +1,13 @@
 <div class="search col-xs-12">
-<%= form_tag recipes_search_path, :method => 'get' do %>
-  <p>
-    <%= text_field_tag :name, params[:name], placeholder: 'Find a recipe...', class: 'search'%>
-  </p>
+  <%= form_tag recipes_search_path, class: "form-inline", method: :get do %>
+    <i class="glyphicon glyphicon-search"></i>
+    <%= text_field_tag :query, params[:query], placeholder: 'Find a recipe...', class: 'form-control'%>
   <% end %>
 </div>
 
-
 <div class="common-terms">
-  <div class='col-xs-3 btn-default btn-lg'>
   <% @procedures.each do |p| %>
-    <%= link_to p.term, procedure_path %>
+  <%= button_to p.term,
+      "#", method: :get, class: "col-xs-3 btn-default btn-lg" %>
   <% end %>
-  </div>
-
 </div>

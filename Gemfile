@@ -42,8 +42,6 @@ gem 'verbs'
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'autoprefixer-rails'
 
-gem 'searchkick'
-
 gem 'react-rails', github: 'reactjs/react-rails'
 
 group :development, :test do

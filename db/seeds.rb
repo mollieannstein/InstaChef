@@ -4,7 +4,6 @@ require 'json'
 require 'nokogiri'
 require 'verbs'
 
-
 APP_KEY = ""
 APP_ID = ""
 
@@ -40,6 +39,7 @@ yummly_rId_array.each do |rId|
   end
 
 end
+
 
 nokogiri_procedures = Nokogiri::HTML(open("http://www.recipegoldmine.com/kitchart/kitchart17.html"))
 
