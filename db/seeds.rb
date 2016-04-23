@@ -128,10 +128,7 @@
 # procedures.pop
 
 
-Procedure.create!(term: "mince", instructions: "Cut into 1/4 inch cube-like pieces.")
-Procedure.create!(term: "boil", instructions: "Put in hot bubbly water.")
-Procedure.create!(term: "blanch", instructions: "Boil for a minute until super green, then immediately take out and rinse with super cold water.")
-# =======
+
 # procedures.each do |item|
 #   object_text = item.text
 #   object_text = object_text.gsub(/\s{1}-{1}\s{1}/, "*")
