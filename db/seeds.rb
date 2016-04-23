@@ -39,46 +39,33 @@ rId_array = [29148, 25359, 25215, 13640, 16587, 12913, 28131, 15800, 27974, 3137
 #   r.save
 # end
 
-Procedure.create(term: "cut", instructions: "")
-Procedure.create(term: "diced", instructions: "")
-Procedure.create(term: "sliced", instructions: "")
-Procedure.create(term: "removed", instructions: "")
-Procedure.create(term: "al dente", instructions: "")
-Procedure.create(term: "baked", instructions: "")
-Procedure.create(term: "basted", instructions: "")
-Procedure.create(term: "beaten", instructions: "")
-Procedure.create(term: "bias-sliced", instructions: "")
-Procedure.create(term: "blanched", instructions: "")
-Procedure.create(term: "blended", instructions: "")
-Procedure.create(term: "boiled", instructions: "")
-Procedure.create(term: "braised", instructions: "")
-Procedure.create(term: "broiled", instructions: "")
-
-procedure_array = []
-
-Procedure.all.each do |proc|
-  procedure_array << proc.term
-end
-
-Recipe.all.each do |r|
-  procedure_array.each do |proc_name|
-    r.ingredients.each do |ing|
-      if ing.item.include?(proc_name)
-        RecipeProcedure.create(
-            recipe_id: r.id,
-            procedure_id: Procedure.find_by(term: proc_name).id)
-      end
-    end
-
-    r.directions.each do |dir|
-      if dir.step.include?(proc_name)
-        RecipeProcedure.create(
-          recipe_id: r.id,
-          procedure_id: Procedure.find_by(term: proc_name).id)
-      end
-    end
-  end
-end
+# procedure_array = []
+#
+# Procedure.all.each do |proc|
+#   procedure_array << proc.term
+# end
+#
+# Recipe.all.each do |r|
+#   procedure_array.each do |proc_name|
+#     r.ingredients.each do |ing|
+#       if ing.item.include?(proc_name)
+#         puts r.id.to_s + " " + proc_name
+#         RecipeProcedure.create(
+#             recipe_id: r.id,
+#             procedure_id: Procedure.find_by(term: proc_name).id)
+#       end
+#     end
+#
+#     r.directions.each do |dir|
+#       if dir.step.include?(proc_name)
+#         puts r.id.to_s + " " + proc_name
+#         RecipeProcedure.create(
+#           recipe_id: r.id,
+#           procedure_id: Procedure.find_by(term: proc_name).id)
+#       end
+#     end
+#   end
+# end
 
 nokogiri_procedures = Nokogiri::HTML(open("http://www.recipegoldmine.com/kitchart/kitchart17.html"))
 
@@ -87,30 +74,11 @@ procedures.pop
 
 procedures.each do |item|
   object_text = item.text
-  procedure_text = object_text.match(/^(\w*\s*)(\W*)((\w*\S*\W{1}?)*)/).captures
-  p procedure_text[0]
-  p procedure_text[2]
-  # Procedure.create(term: procedure_text[0], instructions: procedure_text[2])
+  object_text = object_text.gsub(/\s{1}-{1}\s{1}/, "*")
+  object_text = object_text.gsub("\\", "")
+  object_text = object_text.gsub("\n", "")
+
+  i = object_text.index('*')
+  Procedure.create(term: object_text[0, i], instructions: object_text[i+1, object_text.length - i])
+
 end
-
-
-# food_terms = ["cut", "diced", "sliced", "removed", "al dente", "bake", "baste", "beaten", "bias-sliced", "blanched", "blended", "boiled", "braised", "broiled", "browned", "butterflied", "candied", "carved", "chiffonaded", "chilled", "chopped", "buttered", "coated", "crimped", "crushed", "carmelized", "creamed", "cubed", "deep-fried", "dipped", "dissolved", "dredged", "dressed", "dusted", "dried", "emulsified", "filleted", "flaked", "floured", "fluted", "folded", "fried", "garsnished", "crystallized", "glazed", "grated", "greased", "ground", "juiced", "kneaded", "marbled", "marinaded", "mashed", "melted", "minced", "mixed", "moistened", "mulled", "parbroiled", "pared", "peeled", "pinched", "piped", "pitted", "plumped", "pounded", "processed", "preheated", "proofed", "pureed", "reduced", "reconstituted", "roasted", "sauteed", "scalded", "scored", "seared", "sectioned", "shredded", "finely shredded", "thinly sliced", "sieved", "sifted", "simmered", "skewered", "skimmed", "snipped", "steamed", "steeped", "stewed", "stirred", "scraped", "toasted", "tossed", "whipped", "zested", "julienned", "shaved", "drained"]
-#
-# p rId_array.size
-#
-# recipe_procs = []
-#
-# ingredients.each do |ing|
-#   food_terms.each do |term|
-#     if ing.include?(term)
-#       recipe_procs.push(term)
-#     end
-#   end
-# end
-#
-# p recipe_procs
-# p food_terms.size
-
-
-
-# response = {"recipe"=>{"publisher"=>"All Recipes", "f2f_url"=>"http://food2fork.com/view/31372", "ingredients"=>["1 pound bulk mild Italian sausage", "1 1/4 teaspoons crushed red pepper flakes", "4 slices bacon, cut into 1/2 inch pieces", "1 large onion, diced", "1 tablespoon minced garlic", "5 (13.75 ounce) cans chicken broth", "6 potato, thinly sliced", "1 cup heavy cream", "1/4 bunch fresh spinach, tough stems removed"], "source_url"=>"http://allrecipes.com/Recipe/Super-Delicious-Zuppa-Toscana/Detail.aspx", "recipe_id"=>"31372", "image_url"=>"http://static.food2fork.com/2160120bb1.jpg", "social_rank"=>99.99999999999993, "publisher_url"=>"http://allrecipes.com", "title"=>"Super-Delicious Zuppa Toscana"}}
