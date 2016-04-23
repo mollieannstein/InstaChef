@@ -11,6 +11,6 @@
 
 <div class="common-terms">
   <% @procedures.each do |p| %>
-    <div class='col-xs-3 btn-default btn-lg'><%= link_to p.term, procedures_show_path %></div>
+    <div class='col-xs-3 btn-default btn-lg'><%= link_to p.term, procedure_path %></div>
   <% end %>
 </div>
