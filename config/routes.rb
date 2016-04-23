@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   get 'recipes/search' => 'recipes#search'
   get 'recipes/show' => 'recipes#show'
 
+  get 'procedures/show' => 'procedure#show'
+
   root "dashboard#index"
 
   # The priority is based upon order of creation: first created -> highest priority.

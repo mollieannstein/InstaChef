@@ -35,9 +35,8 @@ gem 'nokogiri', '~> 1.6', '>= 1.6.7'
 # gem 'capistrano-rails', group: :development
 
 # add rails bootstrap with less for customization
-gem "therubyracer"
-gem "less-rails"
-gem "twitter-bootstrap-rails"
+gem 'bootstrap-sass', '~> 3.2.0'
+gem 'autoprefixer-rails'
 
 
 group :development, :test do
