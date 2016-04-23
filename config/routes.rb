@@ -6,6 +6,12 @@ Rails.application.routes.draw do
 
   resources :procedures, only: [:show]
 
+  resources :recipes, only: [:search] do
+    collection do
+      get :autocomplete
+    end
+  end
+
   root "dashboard#index"
 
   # The priority is based upon order of creation: first created -> highest priority.

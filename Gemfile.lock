@@ -1,3 +1,15 @@
+GIT
+  remote: git://github.com/reactjs/react-rails.git
+  revision: e7871a6e3c8a28fd9b3b6ee413d0f0ef696f10a2
+  specs:
+    react-rails (1.6.2)
+      babel-transpiler (>= 0.7.0)
+      coffee-script-source (~> 1.8)
+      connection_pool
+      execjs
+      rails (>= 3.2)
+      tilt
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -88,7 +100,9 @@ GEM
       nokogiri (>= 1.5.9)
     mail (2.6.4)
       mime-types (>= 1.16, < 4)
-    mime-types (2.99.1)
+    mime-types (3.0)
+      mime-types-data (~> 3.2015)
+    mime-types-data (3.2016.0221)
     mini_portile2 (2.0.0)
     minitest (5.8.4)
     multi_json (1.11.2)
@@ -131,13 +145,6 @@ GEM
     rake (11.1.2)
     rdoc (4.2.2)
       json (~> 1.4)
-    react-rails (1.6.2)
-      babel-transpiler (>= 0.7.0)
-      coffee-script-source (~> 1.8)
-      connection_pool
-      execjs
-      rails (>= 3.2)
-      tilt
     rspec (3.4.0)
       rspec-core (~> 3.4.0)
       rspec-expectations (~> 3.4.0)
@@ -215,7 +222,7 @@ DEPENDENCIES
   rails (= 4.2.6)
   rails_12factor
   rake
-  react-rails (~> 1.0)
+  react-rails!
   rspec
   rspec-rails
   sass-rails (~> 5.0)

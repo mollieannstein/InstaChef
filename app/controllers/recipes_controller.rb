@@ -1,6 +1,14 @@
 class RecipesController < ApplicationController
   def search
-    @recipes = Recipe.where(params[:name])
+    if params[:query].present?
+      @recipes = Recipe.search(params[:query], name: params[:name], load: true)
+    else
+      @recipes = Recipe.all.name params[:name]
+    end
+  end
+
+  def autocomplete
+    render json: Recipe.search(params[:query], autocomplete: true).map(&:name)
   end
 
   def show
