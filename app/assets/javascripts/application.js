@@ -18,7 +18,3 @@
 //= require components
 //= require_tree .
 
-
-$(.document).ready(function({
-  $('input.search').searchbox();
-}));

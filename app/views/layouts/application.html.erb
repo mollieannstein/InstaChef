@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <%= favicon_link_tag 'favicon.ico'%>
   <title>InstaChef</title>
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
@@ -8,8 +9,8 @@
 </head>
 <body>
   <div id ="main-container" class="container-fluid">
-    <h1>InstaChef</h1>
-<!--     <div class="row"> -->
+    <h1><%= image_tag("logo.png")%></h1>
+    <div class="row">
       <div id="content" class="col-xs-12">
         <%= yield %>
       </div>
