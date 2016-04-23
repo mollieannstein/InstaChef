@@ -56,19 +56,24 @@ Procedure.create(term: "broiled", instructions: "")
 procedure_array = []
 
 Procedure.all.each do |proc|
-  procedure_array << proc.name
+  procedure_array << proc.term
 end
 
 Recipe.all.each do |r|
   procedure_array.each do |proc_name|
     r.ingredients.each do |ing|
-      if ing.include?(proc_name)
-        
+      if ing.item.include?(proc_name)
+        RecipeProcedure.create(
+            recipe_id: r.id,
+            procedure_id: Procedure.find_by(term: proc_name).id)
       end
     end
 
     r.directions.each do |dir|
-      if dir.include?(proc_name)
+      if dir.step.include?(proc_name)
+        RecipeProcedure.create(
+          recipe_id: r.id,
+          procedure_id: Procedure.find_by(term: proc_name).id)
       end
     end
   end
