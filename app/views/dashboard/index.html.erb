@@ -1,4 +1,4 @@
-<div class="search">
+<div class="search col-xs-12">
 <%= form_tag recipes_search_path, :method => 'get' do %>
   <p>
     <%= text_field_tag :name, params[:name], placeholder: 'Find a recipe...'  %>
@@ -10,8 +10,7 @@
 
 
 <div class="common-terms">
-  <span>chop</span>
-  <span>chop</span>
-  <span>chop</span>
-  <span>chop</span>
+  <% @procedures.each do |p| %>
+    <div class='col-xs-3 btn-default btn-lg'><%= link_to p.term, procedures_show_path %></div>
+  <% end %>
 </div>
