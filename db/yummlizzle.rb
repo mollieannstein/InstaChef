@@ -3,8 +3,8 @@ require 'net/http'
 require 'json'
 require 'nokogiri'
 
-# APP_KEY = "3426a1046705ec18632e7c1386fad156"
-# APP_ID = "e512ae51"
+# APP_KEY = ""
+# APP_ID = ""
 # url = "http://api.yummly.com/v1/api/recipe/Tropical-Grilled-Chicken-Breast-AllRecipes-39303?_app_id=#{APP_ID}&_app_key=#{APP_KEY}"
 #
 # uri = URI.parse(URI.escape(url))
