@@ -1,16 +1,11 @@
 Rails.application.routes.draw do
 
-  get '/recipes/show' => 'recipes#show'
-
   get '/recipes/search' => 'recipes#search'
 
-  resources :procedures, only: [:show]
 
-  resources :recipes, only: [:search] do
-    collection do
-      get :autocomplete
-    end
-  end
+  resources :recipes, only: [:show]
+
+  resources :procedures, only: [:show]
 
   root "dashboard#index"
 
