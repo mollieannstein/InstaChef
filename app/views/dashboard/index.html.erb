@@ -1,9 +1,7 @@
 <div class="search col-xs-12">
 <%= form_tag recipes_search_path, :method => 'get' do %>
   <p>
-    <%= text_field_tag :name, params[:name], placeholder: 'Find a recipe...'  %>
-
-    <%= submit_tag "Search", :name => nil, class: "btn btn-success"%>
+    <%= text_field_tag :name, params[:name], placeholder: 'Find a recipe...', class: 'search'%>
   </p>
   <% end %>
 </div>
@@ -15,4 +13,5 @@
     <%= link_to p.term, procedure_path %>
   <% end %>
   </div>
+
 </div>
