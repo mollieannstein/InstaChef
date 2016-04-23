@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
 
-  get 'recipes/search' => 'recipes#search'
-  get 'recipes/show' => 'recipes#show'
+  get '/recipes/show' => 'recipes#show'
 
-  get 'procedures/show' => 'procedure#show'
+  get '/recipes/search' => 'recipes#search'
+
+  resources :procedures, only: [:show]
 
   root "dashboard#index"
 
