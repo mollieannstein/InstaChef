@@ -189,12 +189,8 @@ DEPENDENCIES
   coffee-rails (~> 4.1.0)
   jbuilder (~> 2.0)
   jquery-rails
-<<<<<<< HEAD
-  nokogiri (~> 1.6, >= 1.6.7)
-=======
   less-rails
-  nokogiri
->>>>>>> master
+  nokogiri (~> 1.6, >= 1.6.7)
   pg (~> 0.15)
   rails (= 4.2.6)
   rake
