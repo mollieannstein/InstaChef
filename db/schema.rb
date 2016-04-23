@@ -46,6 +46,8 @@ ActiveRecord::Schema.define(version: 20160422220558) do
 
   create_table "recipes", force: :cascade do |t|
     t.string   "name"
+    t.string   "image_url"
+    t.integer  "servings"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
