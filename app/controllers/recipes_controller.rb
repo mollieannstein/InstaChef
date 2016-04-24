@@ -11,9 +11,9 @@ class RecipesController < ApplicationController
   end
 
 
-  def search
-    @recipes = Recipe.search(params[:query])
-  end
+  # def search
+  #   @recipes = Recipe.search(params[:query])
+  # end
 
   def show
     @recipe = Recipe.find(params[:id])
