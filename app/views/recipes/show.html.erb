@@ -1,14 +1,29 @@
-<%= @recipe.name %>
+<div class="col-sm-6">
+  <div class="row-fluid">
+    <div class="page-header">
+      <h1><%= @recipe.name %></h1>
+    </div>
+  </div>
 
-  <% @recipe.ingredients.each do |ingred| %>
-    <li><%= ingred.item %></li>
-  <% end %>
+  <div class="row-fluid">
+    <div class="page-header">
+      <h1><small>Ingredients</small></h1>
+    </div>
+    <% @recipe.ingredients.each do |i| %>
+      <li><%= i.item %></li>
+    <% end %>
+  </div>
 
-  <% @recipe.recipe_procedures.each do |rp|%>
-    <% procedure =  Procedure.find(rp.procedure_id) %>
-    <li><%= procedure.term %></li>
-  <% end %>
+  <div class="row-fluid">
+    <div class="page-header">
+      <h1><small>Directions</small></h1>
+    </div>
+    <% @recipe.directions.each do |direction| %>
+      <li><%= direction.step %></li>
+    <% end %>
+  </div>
+</div>
 
-<% @recipe.directions.each do |direction| %>
-  <li><%= direction.step %></li>
-<% end %>
+<div class="col-sm-4">
+  <%= render partial: "procedures", locals: {procedure: @procedure} %>
+</div>
