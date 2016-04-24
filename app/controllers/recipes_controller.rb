@@ -1,5 +1,4 @@
 class RecipesController < ApplicationController
-  autocomplete :recipe, :name
 
   def search
     @recipes = Recipe.search(params[:query])
@@ -7,6 +6,6 @@ class RecipesController < ApplicationController
 
   def show
     @recipe = Recipe.find(params[:id])
-    render partial: "procedures", locals: {recipe: @recipe}
+    render :show
   end
 end
