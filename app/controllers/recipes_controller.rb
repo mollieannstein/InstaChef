@@ -1,5 +1,14 @@
 class RecipesController < ApplicationController
-  autocomplete :recipe, :name
+  # autocomplete :recipe, :name
+  def index
+    @recipes = Recipe.all
+    if params[:search]
+      @recipes = Recipe.search(params[:search])
+    else
+      @recipes = Recipe.all
+    end
+  end
+
 
   def search
     @recipes = Recipe.search(params[:query])
