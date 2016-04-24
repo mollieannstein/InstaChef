@@ -8,6 +8,5 @@ class RecipesController < ApplicationController
   def show
     @recipe = Recipe.find(params[:id])
     render :show
-    # render partial: "procedures", locals: {recipe: @recipe}
   end
 end
