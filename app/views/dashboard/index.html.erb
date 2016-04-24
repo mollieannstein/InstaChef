@@ -10,7 +10,6 @@
 
 <div class="common-terms">
   <% @procedures.each do |p| %>
-  <%= button_to p.term,
-      "#", method: :get, class: "col-xs-3 btn-default btn-lg" %>
+  <%= button_to p.term, procedure_path(p), method: :get, class: "col-xs-3 btn-default btn-lg" %>
   <% end %>
 </div>
