@@ -12,7 +12,7 @@
     <h6>Servings: <%= @recipe.servings %></h6>
     <% @recipe.ingredients.each do |i| %>
       <li><%= highlight(i.item, @recipe.recipe_procedures).html_safe %></li>
-      <li><%= recipe_converter(highlight(i.item, @recipe.recipe_procedures).html_safe,2) %></li>
+      <li>Doubled: <%= recipe_converter(highlight(i.item, @recipe.recipe_procedures).html_safe,2) %></li>
 
     <% end %>
   </div>

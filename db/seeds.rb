@@ -4,6 +4,7 @@ require 'json'
 require 'nokogiri'
 require 'verbs'
 
+############# REMOVE BEFORE PUSH ###########
 APP_KEY = ""
 APP_ID = ""
 
@@ -53,13 +54,20 @@ procedures.each do |item|
   object_text = object_text.gsub("\n", "")
 
   i = object_text.index('*')
-  Procedure.create(term: object_text[0, i], instructions: object_text[i+1, object_text.length - i])
+  term =  object_text[0, i]
+  past_term = Verbs::Conjugator.conjugate term.to_sym, :tense => :past, :aspect => :perfective
+  Procedure.create(term: term, past_tense_term: past_term,instructions: object_text[i+1, object_text.length - i])
 end
 
 procedure_array = []
+past_tense_array = []
 
 Procedure.all.each do |proc|
   procedure_array << proc.term
+end
+
+Procedure.all.each do |proc|
+  past_tense_array << proc.past_tense_term
 end
 
 Recipe.all.each do |r|
