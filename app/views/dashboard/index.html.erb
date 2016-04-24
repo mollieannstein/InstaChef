@@ -1,10 +1,10 @@
-<div class="search col-xs-12">
-  <%= form_tag(recipes_path, class: "form-inline", method: :get, id: "search-form") do %>
-    <i class="glyphicon glyphicon-search"></i>
-    <%= text_field_tag :search, params[:search], placeholder: 'Find a recipe...', class: 'form-control'%>
-    <%= submit_tag "Search" %>
+
+<span class="input-group input-group-lg">
+  <span class="input-group-addon glyphicon glyphicon-search" id="sizing-addon1"></span>
+<%= form_tag(recipes_path, class: "form-inline", method: :get, id: "search-form") do %>
+    <%= input :search, params[:search], placeholder: 'Find a recipe...', class: 'form-control'%>
   <% end %>
-</div>
+</span>
 
 
 
