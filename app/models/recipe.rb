@@ -3,4 +3,10 @@ class Recipe < ActiveRecord::Base
   has_many :procedures, through: :recipe_procedures, source: :procedure
   has_many :ingredients
   has_many :directions
+
+  def self.search(input)
+    where("name ILIKE ? ", "%#{input}%")
+  end
+
+
 end

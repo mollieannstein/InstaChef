@@ -1,9 +1,12 @@
+
 <span class="input-group input-group-lg">
   <span class="input-group-addon glyphicon glyphicon-search" id="sizing-addon1"></span>
-  <%= form_tag recipes_search_path, method: :get do %>
-    <%= text_field_tag :query, params[:query], placeholder: 'Find a recipe...', class: 'form-control'%>
+<%= form_tag(recipes_path, class: "form-inline", method: :get, id: "search-form") do %>
+    <%= input :search, params[:search], placeholder: 'Find a recipe...', class: 'form-control'%>
   <% end %>
 </span>
+
+
 
 <div class="common-terms">
   <% @procedures.each do |p| %>
