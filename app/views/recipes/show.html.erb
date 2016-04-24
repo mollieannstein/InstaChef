@@ -18,12 +18,14 @@
     <div class="page-header">
       <h1><small>Directions</small></h1>
     </div>
+    <ol>
     <% @recipe.directions.each do |direction| %>
       <li><%= direction.step %></li>
     <% end %>
+    </ol>
   </div>
 </div>
 
-<div class="col-sm-4">
+<div class="col-sm-4 pre-scrollable">
   <%= render partial: "procedures", locals: {procedure: @procedure} %>
 </div>
