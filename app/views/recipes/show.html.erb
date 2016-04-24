@@ -1,3 +1,14 @@
-<% @recipe.each do |p| %>
+<%= @recipe.name %>
 
+  <% @recipe.ingredients.each do |ingred| %>
+    <li><%= ingred.item %></li>
+  <% end %>
+
+  <% @recipe.recipe_procedures.each do |rp|%>
+    <% procedure =  Procedure.find(rp.procedure_id) %>
+    <li><%= procedure.term %></li>
+  <% end %>
+
+<% @recipe.directions.each do |direction| %>
+  <li><%= direction.step %></li>
 <% end %>
