@@ -8,13 +8,19 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <div id ="main-container" class="container-fluid">
-    <h1><%= image_tag("logo.png")%></h1>
-    <div class="row">
-      <div id="content" class="col-xs-12">
-        <%= yield %>
+  <nav class="navbar navbar-default">
+    <div class="navbar-header">
+      <%= image_tag("logo.png")%>
+    </div>
+    </nav>
+    <div class="jumbotron">
+      <div id="main-container" class="container-fluid">
+        <div class="row">
+          <div id="content" class="col-xs-12">
+            <%= yield %>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
 </body>
 </html>
