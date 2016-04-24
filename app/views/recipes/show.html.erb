@@ -9,8 +9,11 @@
     <div class="page-header">
       <h1><small>Ingredients</small></h1>
     </div>
+    <h6>Servings: <%= @recipe.servings %></h6>
     <% @recipe.ingredients.each do |i| %>
-      <li><%= i.item %></li>
+      <li><%= highlight(i.item, @recipe.recipe_procedures).html_safe %></li>
+      <li>Doubled: <%= recipe_converter(highlight(i.item, @recipe.recipe_procedures).html_safe,2) %></li>
+
     <% end %>
   </div>
 
@@ -19,7 +22,7 @@
       <h1><small>Directions</small></h1>
     </div>
     <% @recipe.directions.each do |direction| %>
-      <li><%= direction.step %></li>
+      <li><%= highlight(direction.step, @recipe.recipe_procedures).html_safe %></li>
     <% end %>
   </div>
 </div>

@@ -2,6 +2,7 @@ class Procedures < ActiveRecord::Migration
   def change
     create_table :procedures do |t|
       t.string :term
+      t.string :past_tense_term
       t.text :instructions
 
       t.timestamps null: false
