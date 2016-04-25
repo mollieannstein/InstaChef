@@ -5,11 +5,11 @@ module ApplicationHelper
       stuff << Procedure.find(m.procedure_id).past_tense_term
     end
     stuff.each do |s|
-      if text.include?(s+" ")
+      if text.include?(" "+s+" ")
         if true
-          text = text.gsub(s, "<mark>"+s+"</mark>")
+          text = text.gsub(" "+s+" ", "<mark>"+s+"</mark>")
         end
-      elsif text.downcase.include?(s.downcase)
+      elsif text.downcase.include?(" "+s.downcase+" ")
         text = text.downcase.gsub(s.downcase, "<mark>"+s.downcase.capitalize+"</mark>")
       end
     end
@@ -29,7 +29,7 @@ module ApplicationHelper
       end
     end
     return text.capitalize
-    
+
   end
 
   def recipe_converter(ingredient, converter)
