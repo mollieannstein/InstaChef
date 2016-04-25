@@ -4,6 +4,7 @@ class Recipes < ActiveRecord::Migration
       t.string :name
       t.string :image_url
       t.integer :servings
+      t.string  :prep_time
 
       t.timestamps null: false
     end
