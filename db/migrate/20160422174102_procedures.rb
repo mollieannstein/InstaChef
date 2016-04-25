@@ -4,8 +4,7 @@ class Procedures < ActiveRecord::Migration
       t.string :term
       t.string :past_tense_term
       t.text :instructions
-      t.string  :img_url
-      t.string  :img_url2
+      t.string :youtube_url
 
       t.timestamps null: false
     end
