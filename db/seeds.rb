@@ -24,7 +24,7 @@ yummly_rId_array.each do |rId|
   response = Net::HTTP.get(uri)
   response = JSON.parse(response)
 
-  r = Recipe.create(name: response["name"], image_url: response["images"][0]["hostedLargeUrl"], servings: response["numberOfServings"])
+  r = Recipe.create(name: response["name"], image_url: response["images"][0]["hostedLargeUrl"], prep_time: response["totalTime"], servings: response["numberOfServings"])
 
   ingredients = response["ingredientLines"]
   source_url = response["source"]["sourceRecipeUrl"]
@@ -63,7 +63,7 @@ procedures.each do |item|
   term =  object_text[0, i]
 
   # youtube json parse
-  youtube_url = "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&q=cooking+term#{term}&key=#{YOUTUBE_API}"
+  youtube_url = "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&q=#{term}+cooking+term&key=#{YOUTUBE_API}"
   youtube_uri = URI.parse(URI.escape(youtube_url))
 
   youtube_response = Net::HTTP.get(youtube_uri)
