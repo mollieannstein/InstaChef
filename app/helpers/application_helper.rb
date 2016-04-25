@@ -29,6 +29,7 @@ module ApplicationHelper
       end
     end
     return text.capitalize
+    
   end
 
   def recipe_converter(ingredient, converter)
