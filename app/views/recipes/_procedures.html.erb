@@ -1,16 +1,4 @@
 <% @recipe.procedures.uniq.each do |p| %>
-<div class="card">
-  <div class="card-block">
-    <h4 class="card-title"><%= p.term %><h4>
-    <h6 class="card-subtitle text-muted"><%= p.instructions %></p>
-
-    <!-- div for gif iframe -->
-    <div>
-      <a href="<%= p.youtube_url%>"><%=p.term%></a>
-      <div class="recipebox"<iframe src="<%=p.youtube_url%>" width="200px" height="200px"></iframe></div>
-    </div>
-
-  </div>
-</div>
-</card>
+    <div class="card-title"><%=p.term %></div>
+    <div class="card-subtitle"><%= p.instructions %></div>
 <% end %>

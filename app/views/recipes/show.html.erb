@@ -1,11 +1,12 @@
-<div class="col-sm-6">
-  <div class="row-fluid">
-    <div class="page-header">
-      <h1><%= @recipe.name %></h1>
-    </div>
-  </div>
+<div class="container">
 
-  <div class="row-fluid">
+<div class="row">
+  <div class="page-header">
+    <h1><%= @recipe.name %></h1>
+  </div>
+</div>
+<div class="col-sm-8">
+  <div class="row">
     <div class="page-header">
       <h1><small>Ingredients</small></h1>
     </div>
@@ -18,7 +19,7 @@
     <% end %>
   </div>
 
-  <div class="row-fluid">
+  <div class="row">
     <div class="page-header">
       <h1><small>Directions</small></h1>
     </div>
@@ -30,6 +31,14 @@
   </div>
 </div>
 
-<div class="col-sm-4 pre-scrollable">
-  <%= render partial: "procedures", locals: {procedure: @procedure} %>
+<div class="col-sm-4">
+<div class="row">
+<div class="page-header">
+  <h1><small>Culinary Terms</small></h1>
+</div>
+<div class="pre-scrollable">
+  <%= render partial: "procedures", locals: { procedure: @procedure } %>
+</div>
+</div>
+</div>
 </div>
