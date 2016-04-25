@@ -73,9 +73,17 @@
   padding: 60px 50px;
 }
 
+.pre-scrollable {
+  float: right;
+}
+
+.col-sm-4 {
+  float: right;
+}
+
 footer {
   font-size: 25px;
   font-family: 'Oxygen', sans-serif;
   letter-spacing: 1.5px;
-  color: #00757F;;
+  color: #00757F;
 }
