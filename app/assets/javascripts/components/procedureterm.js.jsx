@@ -8,7 +8,7 @@ var ProcedureTerm = React.createClass ({
   render: function() {
     return (
       <div onClick={this.handleClick} className="col-sm-3 btn-default panel-heading">
-        {this.props.procedure.term} <div className="panel-body instructions">{this.props.procedure.instructions}</div>
+        {this.props.procedure.term} <div className="button panel-body instructions">{this.props.procedure.instructions}</div>
       </div>
     );
   }
