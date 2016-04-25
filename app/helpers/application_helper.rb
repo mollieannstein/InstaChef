@@ -15,10 +15,14 @@ module ApplicationHelper
   end
 
   def recipe_converter(ingredient, converter)
-    rational_number = ingredient.to_r
-    replace_me = rational_number.to_s
-    replace_me_too = rational_number.to_i.to_s
-    return convert((ingredient.to_r * converter).to_f).to_s + ingredient.gsub(replace_me, "").gsub(replace_me_too, "")
+    i = ingredient.index(/[a-zA-Z(]/)
+    rough_number = ingredient[0,i].strip
+    rational_number = mixed_number_to_rational(rough_number)
+    if rational_number == 0 || rational_number == false
+      return ingredient
+    else
+      return convert((rational_number*2).to_f).to_s + ingredient[i-1, ingredient.length]
+    end
   end
 
   def convert x
@@ -27,5 +31,29 @@ module ApplicationHelper
     i == f ? i : f
     rescue ArgumentError
     x
+  end
+
+  def is_rational?(object)
+    true if Rational(object) rescue false
+  end
+
+  def mixed_number_to_rational(amount)
+    rational_to_return = 0
+    amount.split(" ").each { |string|
+      if is_rational?(string) # Number?
+        if string.include?("/") # Fraction?
+          rational_to_return += Rational(string)
+        elsif string.to_i == string.to_f # Whole number?
+          rational_to_return += string.to_i
+        elsif string.include?(".") # Decimal?
+          rational_to_return += Rational(string)
+        else # Not a fraction, decimal, or whole number.
+          return false
+        end
+      else
+        return false # Not a number.
+      end
+    }
+    rational_to_return
   end
 end
