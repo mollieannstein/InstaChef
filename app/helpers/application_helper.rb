@@ -5,7 +5,7 @@ module ApplicationHelper
       stuff << Procedure.find(m.procedure_id).past_tense_term
     end
     stuff.each do |s|
-      if text.include?(s)
+      if text.include?(s+" ")
         if true
           text = text.gsub(s, "<mark>"+s+"</mark>")
         end
@@ -13,7 +13,7 @@ module ApplicationHelper
         text = text.downcase.gsub(s.downcase, "<mark>"+s.downcase.capitalize+"</mark>")
       end
     end
-    return text
+    return text.downcase
   end
 
   def highlight_directions(text, match_array)
@@ -22,15 +22,13 @@ module ApplicationHelper
       stuff << Procedure.find(m.procedure_id).term
     end
     stuff.each do |s|
-      if text.include?(s)
-        if true
-          text = text.gsub(s, "<mark>"+s+"</mark>")
-        end
-      elsif text.downcase.include?(s.downcase)
-        text = text.downcase.gsub(s.downcase, "<mark>"+s.downcase.capitalize+"</mark>")
+      if text.include?(" "+s+" ")
+        text = text.gsub(" "+s+" ", "<mark>"+s+"</mark>")
+      elsif text.downcase.include?(" "+s.downcase+" ")
+        text = text.downcase.gsub(" "+s.downcase+" ", "<mark>"+s.downcase.capitalize+"</mark>")
       end
     end
-    return text
+    return text.capitalize
   end
 
   def recipe_converter(ingredient, converter)
