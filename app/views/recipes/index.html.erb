@@ -1,9 +1,11 @@
 <% if @recipes.present? %>
 <div>
   <% @recipes.each do |r| %>
+  <div class="col-sm-12 btn-lg">
     <%= link_to r.name, recipe_path(r) %>
+  </div>
   <% end %>
 </div>
 <% else %>
   <p>There are no recipes containing the terms(s) <%= params[:search] %></p>
-  <% end %>
+<% end %>

@@ -1,15 +1,22 @@
-
-<span class="input-group input-group-lg">
-  <span class="input-group-addon glyphicon glyphicon-search" id="sizing-addon1"></span>
-<%= form_tag(recipes_path, class: "form-inline", method: :get, id: "search-form") do %>
+<div class="main-searchbar">
+<%= form_tag recipes_path, method: :get, id: "search-form" do %>
+<span class="input-group input-group-lg form-inline">
+  <span class="input-group-addon glyphicon glyphicon-search"></span>
     <%= text_field_tag :search, params[:search], placeholder: 'Find a recipe...', class: 'form-control'%>
   <% end %>
-</span>
-
-
+</div>
 
 <div class="common-terms">
-  <% @procedures.each do |p| %>
-  <%= button_to p.term, procedure_path(p), method: :get, class: "col-xs-3 btn-default btn-lg" %>
-  <% end %>
+  <div class="row">
+      <% @procedures[0..3].each do |p| %>
+      <%= react_component "ProcedureTerm", { procedure: p } %>
+      <% end %>
+  </div>
+  <div class="row">
+    <% @procedures[4..-1].each do |p| %>
+    <%= react_component "ProcedureTerm", { procedure: p } %>
+    <% end %>
+  </div>
 </div>
+
+

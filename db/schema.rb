@@ -32,9 +32,12 @@ ActiveRecord::Schema.define(version: 20160422220558) do
 
   create_table "procedures", force: :cascade do |t|
     t.string   "term"
+    t.string   "past_tense_term"
     t.text     "instructions"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.string   "img_url"
+    t.string   "img_url2"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
   create_table "recipe_procedures", force: :cascade do |t|
