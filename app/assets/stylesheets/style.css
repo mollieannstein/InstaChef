@@ -1,28 +1,72 @@
 @import url(https://fonts.googleapis.com/css?family=Oxygen|Lobster|Maven+Pro|Questrial|Poppins|Didact+Gothic|Marmelad|Overlock);
 
+body {
+    font-family: 'Oxygen', sans-serif;
+    line-height: 1.8;
+    color: #818181;
+}
+
+.card-title {
+  font-size: 18px;
+}
+
+h2 {
+    font-size: 24px;
+    text-transform: uppercase;
+    color: #303030;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+h4 {
+    font-size: 10px;
+    line-height: 1.375em;
+    color: #303030;
+    font-weight: 400;
+    margin-bottom: 30px;
+}
+.jumbotron {
+    background-color: #01BBCC;
+    color: #fff;
+    padding: 100px 25px;
+    font-family: 'Oxygen', sans-serif;
+}
+.container-fluid {
+    padding: 60px 50px;
+}
+.bg-grey {
+    background-color: #f6f6f6;
+}
+
+.logo {
+    color: #01BBCC;
+    font-size: 50px;
+}
+
+.navbar {
+    margin-bottom: 0;
+    background-color: #01BBCC;
+    border: 0;
+    font-size: 12px;
+    line-height: 2;
+    letter-spacing: 4px;
+    border-radius: 0;
+    font-family: Montserrat, sans-serif;
+}
+.navbar li a, .navbar .navbar-brand {
+    color: #fff;
+}
+.navbar-nav li a:hover, .navbar-nav li.active a {
+    color: #01BBCC;
+    background-color: #fff;
+}
+.navbar-default .navbar-toggle {
+    border-color: transparent;
+    color: #fff;
+}
 
 .instructions {
   display: none;
   padding: 10px;
-}
-
-.jumbotron {
-  background-color: #01BBCC;
-  color: #ffffff;
-  padding: 100px 25px;
-}
-
-.btn-default:hover {
-  color: #00757F;
-}
-
-.bg-grey {
-  background-color: #f6f6f6;
-  border-radius: 20px;
-}
-
-.chef-logo {
-  margin: 0 auto;
 }
 
 .main-searchbar {
@@ -70,22 +114,6 @@
   padding: 2px;
 }
 
-.container-fluid {
-  padding: 60px 50px;
-}
-
 .pre-scrollable {
   float: right;
 }
-
-.col-sm-4 {
-  float: right;
-}
-
-footer {
-  font-size: 25px;
-  font-family: 'Oxygen', sans-serif;
-  letter-spacing: 1.5px;
-  color: #00757F;
-}
-
