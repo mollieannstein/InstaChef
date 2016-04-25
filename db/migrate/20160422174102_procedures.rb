@@ -5,6 +5,7 @@ class Procedures < ActiveRecord::Migration
       t.string :past_tense_term
       t.text :instructions
       t.string  :img_url
+      t.string  :img_url2
 
       t.timestamps null: false
     end
