@@ -3,9 +3,20 @@
   <div class="card-block">
     <h4 class="card-title"><%= p.term %><h4>
     <h6 class="card-subtitle text-muted"><%= p.instructions %></p>
-    <img src="<%= p.img_url %>">
+
+    <!-- div for gif iframe -->
+    <div>
+      <a href="<%=p.img_url%>"><%=p.term%></a>
+      <div class="recipebox"<iframe src="<%=p.img_url%>" width="200px" height="200px"></iframe></div>
+    </div>
+
+    <!-- div for gif iframe -->
+    <div>
+      <a href="<%=p.img_url2%>"><%=p.term%></a>
+      <div class="recipebox"<iframe src="<%=p.img_url2%>" width="200px" height="200px"></iframe></div>
+    </div>
+
   </div>
-  <img data-src=".gif" alt="">
 </div>
 </card>
 <% end %>
