@@ -11,8 +11,8 @@
     </div>
     <h6>Servings: <%= @recipe.servings %></h6>
     <% @recipe.ingredients.each do |i| %>
-      <li><%= highlight(i.item, @recipe.recipe_procedures).html_safe %></li>
-      <li>Doubled: <%= recipe_converter(highlight(i.item, @recipe.recipe_procedures).html_safe,2) %></li>
+      <li><%= highlight_ingredients(i.item, @recipe.recipe_procedures).html_safe %></li>
+      <li>Doubled: <%= recipe_converter(highlight_ingredients(i.item, @recipe.recipe_procedures),2).html_safe %></li>
 
     <% end %>
   </div>
@@ -22,7 +22,7 @@
       <h1><small>Directions</small></h1>
     </div>
     <% @recipe.directions.each do |direction| %>
-      <li><%= highlight(direction.step, @recipe.recipe_procedures).html_safe %></li>
+      <li><%= highlight_directions(direction.step, @recipe.recipe_procedures).html_safe %></li>
     <% end %>
   </div>
 </div>

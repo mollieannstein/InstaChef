@@ -1,12 +1,31 @@
 module ApplicationHelper
-  def highlight(text, match_array)
+  def highlight_ingredients(text, match_array)
+    stuff = []
+    match_array.each do |m|
+      stuff << Procedure.find(m.procedure_id).past_tense_term
+    end
+    stuff.each do |s|
+      if text.include?(s)
+        if true
+          text = text.gsub(s, "<mark>"+s+"</mark>")
+        end
+      elsif text.downcase.include?(s.downcase)
+        text = text.downcase.gsub(s.downcase, "<mark>"+s.downcase.capitalize+"</mark>")
+      end
+    end
+    return text
+  end
+
+  def highlight_directions(text, match_array)
     stuff = []
     match_array.each do |m|
       stuff << Procedure.find(m.procedure_id).term
     end
     stuff.each do |s|
       if text.include?(s)
-        text = text.gsub(s, "<mark>"+s+"</mark>")
+        if true
+          text = text.gsub(s, "<mark>"+s+"</mark>")
+        end
       elsif text.downcase.include?(s.downcase)
         text = text.downcase.gsub(s.downcase, "<mark>"+s.downcase.capitalize+"</mark>")
       end
