@@ -61,7 +61,7 @@ procedures.each do |item|
   term =  object_text[0, i]
 
   # youtube json parse
-  youtube_url = "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&q=cooking+term#{term}&key=#{YOUTUBE_API}"
+  youtube_url = "https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=UCIP7hCS2pcET5lI4PoDESUQ&channelId=UC4tAgeVdaNB5vD_mBoxg50w&maxResults=1&q=how+to#{term}&key=#{YOUTUBE_API}"
   youtube_uri = URI.parse(URI.escape(youtube_url))
 
   youtube_response = Net::HTTP.get(youtube_uri)
@@ -114,8 +114,5 @@ end
 
 food2fork_rId_array = [29148, 25359, 25215, 13640, 16587, 12913, 28131, 15800, 27974, 31372, 2296, 30009, 17711, 4860, 7211, 33165, 7778, 10634, 29594, 13812, 34005, 20461, 3620, 34963, 17562, 29159, 7542, 26177, 29696, 3649, 31876, 33844, 24968, 1775, 609, 26548, 24321, 13464, 14755, 32478, 2734, 13344, 29102, 31904, 32024, 22230, 690, 12970, 7186, 22340, 28463, 30585, 23700, 31402, 5545, 23009, 34678, 7321, 17203, 22317, 28789, 4057, 25279, 3763, 28133, 28652, 8960, 16600, 9020, 32496, 33891, 33861, 30996, 33843, 33852, 33894, 13051, 20969, 28878, 29037, 17551, 30937, 22388, 15823, 21636, 22691, 22934, 12202, 27537, 13866, 11109, 2404, 5437, 6257, 12240, 7820, 23126, 22565, 27314, 27295, 27304, 10768, 16100, 1022, 30887, 28099, 6955, 21405, 28161, 27464, 28939, 27461, 12204, 4851, 29613, 32459, 30501, 32738, 30697, 12743, 14726, 12174, 17332, 9171, 30863, 19298, 18280, 24593, 26464, 11615, 23141, 15168, 4108, 14421, 22297, 8042, 6105, 34369, 24917, 2370, 14647, 19831, 30757, 32745, 9630, 29382, 6295, 2495, 2480, 2425, 11763, 2429, 3595, 5944, 2393, 10642, 2498, 2377, 9122, 32819, 32818, 7836, 1767, 1002, 10611, 34036, 18930, 21700, 2715, 12481, 22346, 26411, 10778, 7765, 29023, 28046, 2486, 15526, 26545, 14451, 3548, 11489, 1736, 19041, 2988, 13264, 17645, 31868, 21608, 644, 29100, 25370, 28899, 9824, 30086, 28734, 20410, 18048, 22559, 11852, 17309, 5783, 30557, 1735, 34173, 28708, 14753, 16067, 15227]
 
-
-# Procedure.update(20, :img_url => "http://i.imgur.com/ywfTJDM.gif", :img_url2 => "http://i.imgur.com/eMKO3Bq.gif")
-# Procedure.update(125, :img_url => "http://i.imgur.com/1BqVowg.gif")
-# Procedure.update(69, :img_url => "http://i.imgur.com/WEgt5Sa.gif", :img_url2 => "http://i.imgur.com/MnHg8xS.gif")
-# Procedure.update(41, :img_url => "http://i.imgur.com/nACmNlW.gif", :img_url2 => "http://i.imgur.com/RoxYQQU.gif")
+# specific youtube video fixes
+# Procedure.update(62, :youtube_url => "https://www.youtube.com/watch?v=aAvlONuJXP0")
