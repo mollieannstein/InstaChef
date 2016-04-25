@@ -7,7 +7,9 @@ require 'verbs'
 ############# REMOVE BEFORE PUSH ###########
 APP_KEY = ""
 APP_ID = ""
-YOUTUBE_API = """
+
+
+YOUTUBE_API = ""
 
 yummly_rId_array = ["Chicken-And-Dumplings-I-Allrecipes", "Salsa-Allrecipes", "Horseradish-Sauce-Allrecipes_1", "Snow-Peak-Frosting-Allrecipes", "Classic-Candied-Sweet-Potatoes-Allrecipes", "Butterscotch-Drops-Allrecipes", "Tropical-Grilled-Chicken-Breast-AllRecipes-39303", "Bannock-Allrecipes", "Good-Old-Fashioned-Pancakes-546169", "Best-Spanish-Rice-Allrecipes"]
 
