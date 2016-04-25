@@ -1,26 +1,30 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <link href='https://fonts.googleapis.com/css?family=Oxygen|Lobster|Maven+Pro|Questrial|Poppins|Didact+Gothic|Marmelad|Overlock' rel='stylesheet' type='text/css'>
   <%= favicon_link_tag 'favicon.ico'%>
   <title>InstaChef</title>
-  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= stylesheet_link_tag 'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <nav class="navbar navbar-default">
-    <div class="navbar-header">
-      <%= image_tag("logo.png")%>
-    </div>
+  <nav class="navbar bg-grey">
+      <div class="row">
+        <div class="col-sm-12">
+            <%= image_tag("logo.png", alt: 'InstaChef', class: "img-responsive chef-logo")%>
+        </div>
+      </div>
     </nav>
     <div class="jumbotron">
-      <div id="main-container" class="container-fluid">
+      <div id="main-container" class="container-fluid bg-grey">
         <div class="row">
-          <div id="content" class="col-xs-12">
             <%= yield %>
-          </div>
         </div>
       </div>
     </div>
+    <footer class="container-fluid text-center bg-grey">
+      created with love by team bEAST coast
+    </footer>
 </body>
 </html>

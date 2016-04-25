@@ -1,0 +1,80 @@
+@import url(https://fonts.googleapis.com/css?family=Oxygen|Lobster|Maven+Pro|Questrial|Poppins|Didact+Gothic|Marmelad|Overlock);
+
+.instructions {
+  display: none;
+  padding: 10px;
+}
+
+.jumbotron {
+  background-color: #01BBCC;
+  color: #ffffff;
+  padding: 100px 25px;
+}
+
+.btn-default:hover {
+  color: #00757F;
+}
+
+.bg-grey {
+  background-color: #f6f6f6;
+  border-radius: 20px;
+}
+
+.chef-logo {
+  margin: 0 auto;
+}
+
+.main-searchbar {
+  padding: 30px;
+}
+
+.form-inline {
+  height: 75px;
+}
+
+#search.form-control {
+  height: 75px;
+  font-size: 20px;
+  font-family: 'Oxygen', sans-serif;
+  letter-spacing: 1.5px;
+}
+
+.glyphicon-search {
+  background-color: #01BBCC;
+  color: white;
+}
+
+.panel-heading {
+  margin: 3px;
+  font-family: 'Oxygen', sans-serif;
+  letter-spacing: 1.5px;
+  font-size: 25px;
+  text-transform: uppercase;
+  color: white;
+  border-radius: 15px;
+  text-align: center;
+  background-color: rgba(1, 187, 204, .4);
+}
+
+.panel-body {
+  text-transform: lowercase;
+  font-size: 20px;
+  position: relative;
+  text-align: left;
+  color: #00757F;
+}
+
+.row {
+  padding: 10px;
+}
+
+.container-fluid {
+  padding: 60px 50px;
+}
+
+footer {
+  font-size: 25px;
+  font-family: 'Oxygen', sans-serif;
+  letter-spacing: 1.5px;
+  color: #00757F;;
+}

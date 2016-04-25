@@ -13,7 +13,6 @@ gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
 
 gem 'rails_12factor', group: :production
-
 gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
@@ -39,8 +38,6 @@ gem 'verbs'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-
-# add rails bootstrap with less for customization
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'autoprefixer-rails'
 
