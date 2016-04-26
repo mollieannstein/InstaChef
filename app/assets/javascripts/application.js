@@ -23,7 +23,7 @@
 $(document).ready(function(){
   // look for dom element to listen to
 
-  //ajax call for displaying recipe on main page
+  //ajax call for displaying recipe on main page and hiding searches
   $('.main-searchbar').on('click', '.drop-down .search_output a', function(event){
     event.preventDefault();
 
@@ -40,6 +40,7 @@ $(document).ready(function(){
     });
   });
 
+  //ajax for rendering culinary terms on main page
   $('.terms').on('click', function(event){
     event.preventDefault();
 
