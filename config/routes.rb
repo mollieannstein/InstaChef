@@ -3,8 +3,10 @@ Rails.application.routes.draw do
   # get '/recipes/search' => 'recipes#search'
 
 
-  resources :recipes, only: [:show, :index]
 
+  get "/fetch_recipes" => 'recipes#fetch'
+
+  resources :recipes, only: [:show, :index]
   resources :procedures, only: [:show]
 
   # get :autocomplete_recipe_name, on: :collection
