@@ -5,6 +5,11 @@ class ProceduresController < ApplicationController
   # take sort_count_frequency off if you don't want to sort by frequency
   def index
     @procedures = Procedure.all.sort_count_frequency
+      if request.xhr?
+        render partial: "procedure", locals: { procedures: @procedures }
+      else
+        render :index
+      end
   end
 
   def show
