@@ -36,7 +36,7 @@ $(document).ready(function(){
       url: route
 
     }).done(function(response){
-      $('.main-searchbar').append(response);
+      $('.recipe_div').append(response);
     });
 //
 //     // var assigns using this for use in done function/ajax call if needed
