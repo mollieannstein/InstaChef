@@ -7,16 +7,3 @@
 </div>
 
 <div class="recipe_div"></div>
-
-<div class="common-terms">
-  <div class="row">
-      <% @procedures[0..3].each do |p| %>
-        <%= react_component "ProcedureTerm", { procedure: p } %>
-      <% end %>
-  </div>
-  <div class="row">
-    <% @procedures[4..-1].each do |p| %>
-      <%= react_component "ProcedureTerm", { procedure: p } %>
-    <% end %>
-  </div>
-</div>

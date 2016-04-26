@@ -136,13 +136,10 @@ h4 {
   color: #00757F;
 }
 
-.row {
-  padding: 2px;
-}
-
-.pre-scrollable {
+.scrollable {
+  max-height: 750px;
   float: right;
-  height: 650px;
+  overflow-y: scroll;
 }
 
 ::-webkit-scrollbar {
