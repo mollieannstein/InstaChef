@@ -6,16 +6,11 @@ require 'verbs'
 
 ############# REMOVE BEFORE PUSH ###########
 
-# APP_KEY = ENV['API_KEY']
-# APP_ID = ENV['YUMMLY_ID']
+APP_KEY = ENV['API_KEY']
+APP_ID = ENV['YUMMLY_ID']
+YOUTUBE_API = ENV['YOUTUBE_API']
 
-# YOUTUBE_API = ENV['YOUTUBE_API']
 
-APP_KEY="3426a1046705ec18632e7c1386fad156"
-
-APP_ID="e512ae51"
-
-YOUTUBE_API="AIzaSyAJvghM4FRJ4pHZ0jcMPh7gdMFIjmyKDnI"
 
 yummly_rId_array = ["Chicken-And-Dumplings-I-Allrecipes", "Salsa-Allrecipes", "Horseradish-Sauce-Allrecipes_1", "Snow-Peak-Frosting-Allrecipes", "Classic-Candied-Sweet-Potatoes-Allrecipes", "Butterscotch-Drops-Allrecipes", "Tropical-Grilled-Chicken-Breast-AllRecipes-39303", "Bannock-Allrecipes", "Good-Old-Fashioned-Pancakes-546169", "Best-Spanish-Rice-Allrecipes"]
 
