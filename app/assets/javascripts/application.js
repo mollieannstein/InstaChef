@@ -20,3 +20,24 @@
 
 //= require_tree .
 
+$(document).ready(function(){
+  // look for dom element to listen to
+  $('searh link dom element').on('click', function(event){
+    event.preventDefault();
+    // hide search results and bar when link is clicked
+    $('search div').hide();
+
+    // var assigns using this for use in done function/ajax call if needed
+    var url = $(this).attr('href');
+    var $link = $(this)
+
+    $.ajax({
+      type: GET,
+      url: url
+
+    }).done(function(response){
+      // hopefully append partial (response) to a new div on the main page
+      $('div where recipe will go').append(response);
+    });
+  });
+});
