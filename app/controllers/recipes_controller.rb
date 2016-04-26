@@ -16,10 +16,6 @@ class RecipesController < ApplicationController
     end
   end
 
-  # def search
-  #   @recipes = Recipe.search(params[:query])
-  # end
-
   def show
     @recipe = Recipe.find(params[:id])
     render :show

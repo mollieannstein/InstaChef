@@ -19,6 +19,13 @@ $( document ).ready(function() {
         var input = $(this).serialize();
         throttledSearch(input);
       }
-
     });
+
+    $("mark").on("mouseover", function(){
+      $("div").removeClass("hovered-term");
+      text = $(this).text();
+      termCard = $(".terms-box").find("#"+text);
+      termCard.addClass("hovered-term");
+    });
+
 });

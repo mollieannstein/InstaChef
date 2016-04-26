@@ -1,15 +1,10 @@
 Rails.application.routes.draw do
 
-  # get '/recipes/search' => 'recipes#search'
-
-
-
-  get "/fetch_recipes" => 'recipes#fetch'
+  # get "/fetch_recipes" => 'recipes#fetch'
 
   resources :recipes, only: [:show, :index]
   resources :procedures, only: [:show]
 
-  # get :autocomplete_recipe_name, on: :collection
 
   root "dashboard#index"
 
