@@ -11,7 +11,6 @@ APP_ID = ENV['YUMMLY_ID']
 YOUTUBE_API = ENV['YOUTUBE_API']
 
 
-
 yummly_rId_array = ["Chicken-And-Dumplings-I-Allrecipes", "Salsa-Allrecipes", "Horseradish-Sauce-Allrecipes_1", "Snow-Peak-Frosting-Allrecipes", "Classic-Candied-Sweet-Potatoes-Allrecipes", "Butterscotch-Drops-Allrecipes", "Tropical-Grilled-Chicken-Breast-AllRecipes-39303", "Bannock-Allrecipes", "Good-Old-Fashioned-Pancakes-546169", "Best-Spanish-Rice-Allrecipes"]
 
 yummly_rId_array_long = ["Chicken-And-Dumplings-I-Allrecipes", "Salsa-Allrecipes", "Horseradish-Sauce-Allrecipes_1", "Snow-Peak-Frosting-Allrecipes", "Classic-Candied-Sweet-Potatoes-Allrecipes", "Butterscotch-Drops-Allrecipes", "Tropical-Grilled-Chicken-Breast-AllRecipes-39303", "Bannock-Allrecipes", "Good-Old-Fashioned-Pancakes-546169", "Best-Spanish-Rice-Allrecipes", "Creamy-Cheese-Bread-Allrecipes", "Traditional-White-Bread-Allrecipes", "London-Broil-For-The-Slow-Cooker-Allrecipes", "Slow-Cooker-Pulled-Pork-AllRecipes", "Best-Ever-Onion-Rings-Allrecipes", "Jen_s-Heavenly-Egg-Salad-Allrecipes", "Applesauce-Allrecipes_1", "Cheesiest-Potatoes-Casserole-Allrecipes", "Cabbage-Burgers-Allrecipes", "Easy-Hummus-Allrecipes", "Buffalo-Chicken-Dip-Allrecipes", "Easy-Gravy-Allrecipes", "Light-And-Fluffy-Spinach-Quiche-Allrecipes", "Best-Green-Bean-Casserole-Allrecipes", "Grandmother_s-Old-Fashioned-Butter-Roll-Allrecipes", "Country-Cooking-Slow-Cooker-Neck-Bones-Allrecipes", "Valentino_s-Pizza-Crust-Allrecipes", "Brandied-Candied-Sweet-Potatoes-AllRecipes", "Pork-Tenderloin-Marinade-Allrecipes", "Chewy-Sugar-Cookies-Allrecipes", "Slow-Cooker-Roast-Beef-AllRecipes", "Grandma_s-Famous-Salmon-Cakes-Allrecipes", "Beef-Burgundy-Iii-Allrecipes", "The-Best-Mashed-Potatoes-Allrecipes", "Amazing-Pork-Tenderloin-In-The-Slow-Cooker-Allrecipes", "Swiss-Cheese-Meatloaf-Allrecipes", "Simple-and-Delicious-Beet-Greens-AllRecipes-37742", "Quick-And-Easy-Alfredo-Sauce-Allrecipes", "Dominican-Style-Oatmeal-AllRecipes", "The-Best-Steak-Marinade-Allrecipes", "Cheese-and-Bacon-Potato-Rounds-682088", "The-World_s-Best-Turkey-Allrecipes"]
@@ -67,7 +66,7 @@ procedures.each do |item|
   else
 
     past_term = Verbs::Conjugator.conjugate term.to_sym, :tense => :past, :aspect => :perfective
-    p = Procedure.create(term: term, past_tense_term: past_term,instructions: object_text[i+1, object_text.length - i])
+    p = Procedure.create(term: term, past_tense_term: past_term,instructions: object_text[i+1, object_text.length - i], youtube_url: "")
 
     # youtube json parse
 
@@ -80,8 +79,8 @@ procedures.each do |item|
     youtube_response = JSON.parse(youtube_response)
 
     if youtube_response["items"].length > 0
-       p.youtube_url = "https://www.youtube.com/watch?v=#{youtube_response["items"][0]["id"]["videoId"]}"
-       p.save
+       p.youtube_url = Procedure.update(p.id, :youtube_url => "//www.youtube.com/embed/#{youtube_response["items"][0]["id"]["videoId"]}")
+       # p.save
       # puts youtube_response["items"][0]["id"]["videoId"]
     end
   end
