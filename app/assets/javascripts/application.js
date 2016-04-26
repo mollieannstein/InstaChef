@@ -38,18 +38,9 @@ $(document).ready(function(){
     }).done(function(response){
       $('.recipe_div').append(response);
     });
-//
-//     // var assigns using this for use in done function/ajax call if needed
-//     var url = $(this).attr('href');
-//     var $link = $(this)
-//
-//     $.ajax({
-//       type: GET,
-//       url: url
-//
-//     }).done(function(response){
-//       // hopefully append partial (response) to a new div on the main page
-//       $('div where recipe will go').append(response);
-//     });
+  });
+
+  $('').on('click' function(event){
+    event.preventDefault();
   });
 });
