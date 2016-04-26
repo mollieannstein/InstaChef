@@ -3,18 +3,18 @@
 <span class="input-group input-group-lg form-inline">
   <span class="input-group-addon glyphicon glyphicon-search"></span>
     <%= text_field_tag :search, params[:search], placeholder: 'Find a recipe...', class: 'typeahead form-control'%>
-  <% end %>
+<% end %>
 </div>
 
 <div class="common-terms">
   <div class="row">
       <% @procedures[0..3].each do |p| %>
-      <%= react_component "ProcedureTerm", { procedure: p } %>
+        <%= react_component "ProcedureTerm", { procedure: p } %>
       <% end %>
   </div>
   <div class="row">
     <% @procedures[4..-1].each do |p| %>
-    <%= react_component "ProcedureTerm", { procedure: p } %>
+      <%= react_component "ProcedureTerm", { procedure: p } %>
     <% end %>
   </div>
 </div>

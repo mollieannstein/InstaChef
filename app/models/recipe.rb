@@ -5,7 +5,7 @@ class Recipe < ActiveRecord::Base
   has_many :directions
 
   def self.search(input)
-    where("name LIKE ? ", "%#{input}%")
+    where("name ILIKE ? ", "%#{input}%")
   end
 
 
