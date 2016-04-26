@@ -41,7 +41,10 @@ h4 {
 }
 
 .hovered-term {
+  padding: 10px;
+  width: 70%;
   box-shadow: 0px 0px 5px #01BBCC;
+  border-radius: 25px;
   margin: 7px;
 }
 
