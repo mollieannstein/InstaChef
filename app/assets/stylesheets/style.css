@@ -45,6 +45,10 @@ h4 {
   padding: 5px;
 }
 
+.procedure {
+  float: right;
+}
+
 .hovered-term {
   padding: 10px;
   width: 80%;
@@ -115,6 +119,16 @@ h4 {
   padding: 7px;
 }
 
+mark {
+  font-family: 'Oxygen', sans-serif;
+  color: white;
+  font-size: 16px;
+  border: 1px solid rgba(1, 187, 204, .4);
+  background-color: rgba(1, 187, 204, .4);
+  border-radius: 8px;
+  padding: 5px;
+}
+
 .panel-heading {
   margin: 5px;
   font-family: 'Oxygen', sans-serif;
@@ -138,7 +152,6 @@ h4 {
 
 .scrollable {
   max-height: 750px;
-  float: right;
   overflow-y: scroll;
 }
 
