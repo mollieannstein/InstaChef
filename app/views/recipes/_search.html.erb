@@ -1,8 +1,8 @@
 <div class="drop-down">
   <% if recipes %>
     <% recipes.each do |r| %>
-    <div class="col-sm-12 btn-lg" id="<%= r.name.squish.downcase.tr(" ","_") %>">
-      <%= link_to r.name, recipe_path(r) %>
+    <div class="col-sm-12 btn-lg" >
+      <li class="search_output"><%= link_to r.name, recipe_path(r) %></li>
     </div>
     <% end %>
   <% else %>
