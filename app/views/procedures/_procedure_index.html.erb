@@ -1,6 +1,14 @@
 <% procedures.each do |procedure| %>
-  <div>
+<div class="panel col-sm-3">
+<div class="row">
+  <div class="panel-heading">
     <%= procedure.term %>
+  </div>
+</div>
+<div class="row-fluid">
+  <div class="panel-body">
     <%= procedure.instructions %>
   </div>
+</div>
+</div>
 <% end %>

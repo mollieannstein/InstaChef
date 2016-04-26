@@ -129,11 +129,17 @@ mark {
   padding: 5px;
 }
 
+.panel {
+  max-width: 500px;
+  margin: 0 auto;
+  height:;
+}
+
 .panel-heading {
   margin: 5px;
   font-family: 'Oxygen', sans-serif;
   letter-spacing: 1.5px;
-  font-size: 25px;
+  font-size: 23px;
   text-transform: uppercase;
   color: white;
   padding: 20px;
@@ -144,7 +150,7 @@ mark {
 
 .panel-body {
   text-transform: lowercase;
-  font-size: 20px;
+  font-size: 18px;
   position: relative;
   text-align: left;
   color: #00757F;
