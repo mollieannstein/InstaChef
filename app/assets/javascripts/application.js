@@ -23,13 +23,13 @@
 $(document).ready(function(){
   // look for dom element to listen to
 
+  //ajax call for displaying recipe on main page and hiding searches
   $('.main-searchbar').on('click', '.drop-down .search_output a', function(event){
     event.preventDefault();
 
+    $('.recipe_div').empty();
     $('.drop-down').hide();
     var route = $(this).attr('href');
-
-    console.log(route);
 
     $.ajax({
       type: 'GET',
@@ -38,18 +38,20 @@ $(document).ready(function(){
     }).done(function(response){
       $('.recipe_div').append(response);
     });
-//
-//     // var assigns using this for use in done function/ajax call if needed
-//     var url = $(this).attr('href');
-//     var $link = $(this)
-//
-//     $.ajax({
-//       type: GET,
-//       url: url
-//
-//     }).done(function(response){
-//       // hopefully append partial (response) to a new div on the main page
-//       $('div where recipe will go').append(response);
-//     });
+  });
+
+  // ajax for rendering culinary terms on main page
+  $('#myNavbar').on('click', '.terms', function(event){
+    event.preventDefault();
+
+    $('.recipe_div').empty();
+
+    $.ajax({
+      type: 'GET',
+      url: '/procedures'
+
+    }).done(function(response){
+      $('.recipe_div').append(response);
+    });
   });
 });
