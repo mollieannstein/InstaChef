@@ -8,6 +8,7 @@ class RecipesController < ApplicationController
     if params[:search]
       @recipes = Recipe.search(params[:search])
       if request.xhr?
+        @recipes = @recipes[0..2]
         render partial: "search", locals: { recipes: @recipes, search: params[:search]}
       end
     else

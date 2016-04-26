@@ -5,9 +5,12 @@ require 'nokogiri'
 require 'verbs'
 
 ############# REMOVE BEFORE PUSH ###########
-APP_KEY = ""
-APP_ID = ""
-YOUTUBE_API = ""
+
+APP_KEY = ENV['API_KEY']
+APP_ID = ENV['YUMMLY_ID']
+
+YOUTUBE_API = ENV['YOUTUBE_API']
+
 
 yummly_rId_array = ["Chicken-And-Dumplings-I-Allrecipes", "Salsa-Allrecipes", "Horseradish-Sauce-Allrecipes_1", "Snow-Peak-Frosting-Allrecipes", "Classic-Candied-Sweet-Potatoes-Allrecipes", "Butterscotch-Drops-Allrecipes", "Tropical-Grilled-Chicken-Breast-AllRecipes-39303", "Bannock-Allrecipes", "Good-Old-Fashioned-Pancakes-546169", "Best-Spanish-Rice-Allrecipes"]
 
@@ -61,7 +64,9 @@ procedures.each do |item|
   term =  object_text[0, i]
 
   # youtube json parse
+
   youtube_url = "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&q=cooking+term#{term}&key=#{YOUTUBE_API}"
+
   youtube_uri = URI.parse(URI.escape(youtube_url))
 
   youtube_response = Net::HTTP.get(youtube_uri)
