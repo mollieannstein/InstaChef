@@ -60,6 +60,7 @@ $(document).ready(function(){
     });
   });
 
+  //ajax for showing all recipes in the main page div
   $('#myNavbar').on('click', '.all-recipes', function(event){
     event.preventDefault();
 
@@ -73,4 +74,22 @@ $(document).ready(function(){
       $('.recipe_div').append(response);
     });
   });
+
+  //append specific recipe to recipe div
+  $('.recipe_div').on('click', '.recipe_link a', function(event){
+    event.preventDefault();
+
+    var url = $(this).attr('href');
+    $('.recipe_div').empty();
+
+
+    $.ajax({
+      type: 'GET',
+      url: url
+
+    }).done(function(response){
+      $('.recipe_div').append(response);
+    });
+  });
+
 });
