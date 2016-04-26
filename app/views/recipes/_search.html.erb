@@ -2,7 +2,8 @@
   <% if recipes %>
     <% recipes.each do |r| %>
     <div class="col-sm-12 btn-lg" >
-      <li class="search_output"><%= link_to r.name, recipe_path(r) %></li>
+      <li style="list-style-type:none" class="search_output"><%= link_to r.name, recipe_path(r) %></li>
+      <ul><img src="<%= r.image_url %>", height="100" width="150"></ul>
     </div>
     <% end %>
   <% else %>
