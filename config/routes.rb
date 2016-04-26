@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   # get "/fetch_recipes" => 'recipes#fetch'
 
   resources :recipes, only: [:show, :index]
-  resources :procedures, only: [:show]
+  resources :procedures, only: [:show, :index]
 
 
   root "dashboard#index"
