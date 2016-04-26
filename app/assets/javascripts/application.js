@@ -59,4 +59,18 @@ $(document).ready(function(){
       $('.recipe_div').append(response);
     });
   });
+
+  $('#myNavbar').on('click', '.all-recipes', function(event){
+    event.preventDefault();
+
+    $('.recipe_div').empty();
+
+    $.ajax({
+      type: 'GET',
+      url: '/allrecipes'
+
+    }).done(function(response){
+      $('.recipe_div').append(response);
+    });
+  });
 });
