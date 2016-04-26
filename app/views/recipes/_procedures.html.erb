@@ -1,4 +1,6 @@
 <% @recipe.procedures.uniq.each do |p| %>
+  <div id="<%= p.term.downcase %>">
     <div class="panel-default"><a href="<%= p.youtube_url %>"><%=p.term %></a></div>
     <div class="side-bar"><%= p.instructions %></div>
+  </div>
 <% end %>
