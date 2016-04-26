@@ -7,9 +7,9 @@ class Procedure < ActiveRecord::Base
   end
 
   def self.sort_count_frequency
-    ordered_terms = Procedure.all.sort do |p1, p2|
+    Procedure.all.sort do |p1, p2|
       p2.count_frequency <=> p1.count_frequency
     end
-    return ordered_terms
   end
+
 end
