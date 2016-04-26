@@ -5,6 +5,7 @@
     <div class="page-header">
       <h1><%= @recipe.name %></h1>
     </div>
+      <p><img src="<%= @recipe.image_url %>"><p>
   </div>
 
   <!-- ingredients div -->
@@ -37,11 +38,11 @@
 
   <!-- terms div -->
   <div class="col-sm-4">
-    <div class="row">
+    <div class="terms-box">
       <div class="page-header">
         <h1><small>Culinary Terms</small></h1>
       </div>
-      <div class="pre-scrollable">
+      <div class="scrollable">
         <%= render partial: "procedures", locals: { procedure: @procedure } %>
       </div>
     </div>
