@@ -1,5 +1,4 @@
 function recipeSearch(input) {
-  $(".drop-down").remove();
   $.ajax({
     url: "/recipes",
     data: input,
@@ -11,14 +10,13 @@ function recipeSearch(input) {
 var throttledSearch = _.throttle(recipeSearch, 300);
 
 $( document ).ready(function() {
-    // console.log( "ready!" );
     $(".form-control").keyup(function(event){
-      if (event.keyCode != 13) {
-        // console.log(event.keyCode);
+        $(".drop-down").remove();
         event.preventDefault();
         var input = $(this).serialize();
-        throttledSearch(input);
-      }
+        if ($(this).val().length > 1) {
+          throttledSearch(input);
+        }
     });
 
     $("mark").on("mouseover", function(){
