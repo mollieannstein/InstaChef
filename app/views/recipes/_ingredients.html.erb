@@ -2,9 +2,9 @@
   <%= select_tag "recipe", "<option>0.5</option><option selected>1</option><option>2</option><option>4</option>".html_safe %>
 <% end %>
 
-<h6>Servings: <%= @recipe.servings %></h6>
-<h6>Prep Time: <%= @recipe.prep_time %></h6>
-<% @recipe.ingredients.each do |i| %>
-  <li><%= recipe_converter(highlight_ingredients(i.item, @recipe.recipe_procedures),1).html_safe %></li>
+<h6>Servings: <%= recipe.servings %></h6>
+<h6>Prep Time: <%= recipe.prep_time %></h6>
+<% recipe.ingredients.each do |i| %>
+  <li><%= recipe_converter(highlight_ingredients(i.item, recipe.recipe_procedures),1).html_safe %></li>
 
 <% end %>
