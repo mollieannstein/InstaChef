@@ -95,4 +95,7 @@ $(document).ready(function(){
     $('.recipe_div').empty();
   });
 
+  $('#myNavbar').on('click', '.conversions', function(event){
+    event.preventDefault();
+  })
 });
