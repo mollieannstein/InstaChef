@@ -23,13 +23,13 @@
 $(document).ready(function(){
   // look for dom element to listen to
 
+  //ajax call for displaying recipe on main page
   $('.main-searchbar').on('click', '.drop-down .search_output a', function(event){
     event.preventDefault();
 
+    $('.recipe_div').empty();
     $('.drop-down').hide();
     var route = $(this).attr('href');
-
-    console.log(route);
 
     $.ajax({
       type: 'GET',
@@ -40,7 +40,17 @@ $(document).ready(function(){
     });
   });
 
-  $('').on('click' function(event){
+  $('.terms').on('click', function(event){
     event.preventDefault();
+
+    var route = $(this).attr('href');
+
+    $.ajax({
+      type: 'GET',
+      url: route
+
+    }).done(function(response){
+      console.log('YOU MADE IT');
+    });
   });
 });
