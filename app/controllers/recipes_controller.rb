@@ -18,6 +18,15 @@ class RecipesController < ApplicationController
 
   def show
     @recipe = Recipe.find(params[:id])
-    render :show
+
+    p request
+    p request.xhr?
+
+    if request.xhr?
+      render partial: "show", layout: false, locals: { recipe: @recipe }
+    else
+      render :show
+    end
   end
+
 end

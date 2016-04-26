@@ -6,8 +6,10 @@ body {
     color: #818181;
 }
 
-.card-title {
-  font-size: 18px;
+.side-bar {
+  color: #818181;
+  padding: 5px;
+  padding-bottom: 12px;
 }
 
 h2 {
@@ -95,6 +97,16 @@ h4 {
   color: white;
 }
 
+.panel-default > a {
+  font-family: 'Oxygen', sans-serif;
+  color: white;
+  font-size: 20px;
+  border: 1px solid rgba(1, 187, 204, .4);
+  background-color: rgba(1, 187, 204, .4);
+  border-radius: 10px;
+  padding: 7px;
+}
+
 .panel-heading {
   margin: 5px;
   font-family: 'Oxygen', sans-serif;
@@ -122,4 +134,14 @@ h4 {
 
 .pre-scrollable {
   float: right;
+}
+
+::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 7px;
+}
+::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgba(0,0,0,.5);
+    -webkit-box-shadow: 0 0 1px rgba(255,255,255,.5);
 }
