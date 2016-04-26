@@ -9,23 +9,17 @@
   </div>
 
   <!-- ingredients div -->
-  <div class="col-sm-8">
+  <div class="col-sm-7">
     <div class="row">
       <div class="page-header">
         <h1><small>Ingredients</small></h1>
       </div>
-      <h6>Servings: <%= @recipe.servings %></h6>
-      <h6>Prep Time: <%= @recipe.prep_time %></h6>
-      <% @recipe.ingredients.each do |i| %>
-        <li><%= highlight_ingredients(i.item, @recipe.recipe_procedures).html_safe %></li>
-        <li>Doubled: <%= recipe_converter(highlight_ingredients(i.item, @recipe.recipe_procedures),2).html_safe %></li>
-
-      <% end %>
+   <%= render partial: "ingredients", locals: { recipe: @recipe } %>
     </div>
 
     <!-- directins div -->
     <div class="row">
-      <div class="page-header">
+      <div class="page-header directions-box">
         <h1><small>Directions</small></h1>
       </div>
       <ol>
