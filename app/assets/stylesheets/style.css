@@ -40,10 +40,15 @@ h4 {
     background-color: #f6f6f6;
 }
 
+.recipe-procedure {
+  margin: 5px;
+  padding: 5px;
+}
+
 .hovered-term {
   padding: 10px;
-  width: 70%;
-  box-shadow: 0px 0px 5px #01BBCC;
+  width: 80%;
+  box-shadow: 0px 0px 10px #01BBCC;
   border-radius: 25px;
   margin: 7px;
 }
@@ -137,6 +142,7 @@ h4 {
 
 .pre-scrollable {
   float: right;
+  height: 650px;
 }
 
 ::-webkit-scrollbar {
@@ -147,4 +153,8 @@ h4 {
     border-radius: 4px;
     background-color: rgba(0,0,0,.5);
     -webkit-box-shadow: 0 0 1px rgba(255,255,255,.5);
+}
+
+.terms-box {
+  height: 650px;
 }
