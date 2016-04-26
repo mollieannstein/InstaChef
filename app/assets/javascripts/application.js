@@ -22,22 +22,34 @@
 
 $(document).ready(function(){
   // look for dom element to listen to
-  $('searh link dom element').on('click', function(event){
-    event.preventDefault();
-    // hide search results and bar when link is clicked
-    $('search div').hide();
 
-    // var assigns using this for use in done function/ajax call if needed
-    var url = $(this).attr('href');
-    var $link = $(this)
+  $('.main-searchbar').on('click', '.drop-down .search_output a', function(event){
+    event.preventDefault();
+
+    $('.drop-down').hide();
+    var route = $(this).attr('href');
+
+    console.log(route);
 
     $.ajax({
-      type: GET,
-      url: url
+      type: 'GET',
+      url: route
 
     }).done(function(response){
-      // hopefully append partial (response) to a new div on the main page
-      $('div where recipe will go').append(response);
+      $('.main-searchbar').append(response);
     });
+//
+//     // var assigns using this for use in done function/ajax call if needed
+//     var url = $(this).attr('href');
+//     var $link = $(this)
+//
+//     $.ajax({
+//       type: GET,
+//       url: url
+//
+//     }).done(function(response){
+//       // hopefully append partial (response) to a new div on the main page
+//       $('div where recipe will go').append(response);
+//     });
   });
 });
