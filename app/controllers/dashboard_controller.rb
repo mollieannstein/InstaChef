@@ -1,7 +1,7 @@
 class DashboardController < ApplicationController
 
   def temp
-    render :placeholder
+
   end
 
   def conversion

@@ -40,18 +40,18 @@ $(document).ready(function(){
     });
   });
 
-  //ajax for rendering culinary terms on main page
-  $('.terms').on('click', function(event){
+  // ajax for rendering culinary terms on main page
+  $('#myNavbar').on('click', '.terms', function(event){
     event.preventDefault();
 
-    var route = $(this).attr('href');
+    $('.recipe_div').empty();
 
     $.ajax({
       type: 'GET',
-      url: route
+      url: '/procedures'
 
     }).done(function(response){
-      console.log('YOU MADE IT');
+      $('.recipe_div').append(response);
     });
   });
 });
