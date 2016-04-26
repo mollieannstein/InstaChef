@@ -5,6 +5,7 @@ require 'nokogiri'
 require 'verbs'
 
 ############# REMOVE BEFORE PUSH ###########
+
 APP_KEY = ENV['API_KEY']
 APP_ID = ENV['YUMMLY_ID']
 
