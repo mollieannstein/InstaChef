@@ -39,7 +39,7 @@ module ApplicationHelper
     if rational_number == 0 || rational_number == false
       return ingredient
     else
-      return convert((rational_number*2).to_f).to_s + ingredient[i-1, ingredient.length]
+      return convert((rational_number*converter).to_f).to_s + ingredient[i-1, ingredient.length]
     end
   end
 

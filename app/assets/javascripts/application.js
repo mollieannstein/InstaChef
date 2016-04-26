@@ -23,6 +23,11 @@
 $(document).ready(function(){
   // look for dom element to listen to
 
+  $('#converter').on('change', function(e){
+    e.preventDefault();
+    alert('fuck yourself');
+  });
+
   $('.main-searchbar').on('click', '.drop-down .search_output a', function(event){
     event.preventDefault();
 
