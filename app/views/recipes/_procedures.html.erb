@@ -1,4 +1,4 @@
 <% @recipe.procedures.uniq.each do |p| %>
-    <div class="card-title"><a href="<%= p.youtube_url %>"><%=p.term %></a></div>
-    <div class="card-subtitle"><%= p.instructions %></div>
+    <div class="panel-default"><a href="<%= p.youtube_url %>"><%=p.term %></a></div>
+    <div class="side-bar"><%= p.instructions %></div>
 <% end %>
