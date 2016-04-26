@@ -22,8 +22,13 @@
 
 $(document).ready(function(){
   // look for dom element to listen to
+  $('#converter').on('change', function(e){
+    e.preventDefault();
+  });
+
 
   //ajax call for displaying recipe on main page and hiding searches
+
   $('.main-searchbar').on('click', '.drop-down .search_output a', function(event){
     event.preventDefault();
 
