@@ -28,7 +28,6 @@ $(document).ready(function(){
 
 
   //ajax call for displaying recipe on main page and hiding searches
-
   $('.main-searchbar').on('click', '.drop-down .search_output a', function(event){
     event.preventDefault();
 
@@ -90,6 +89,10 @@ $(document).ready(function(){
     }).done(function(response){
       $('.recipe_div').append(response);
     });
+  });
+
+  $('.navbar-header a').on('click', function(event){
+    $('.recipe_div').empty();
   });
 
 });
