@@ -8,5 +8,9 @@ class Recipe < ActiveRecord::Base
     where("name ILIKE ? ", "%#{input}%")
   end
 
-
+  def self.sort_courses(type)
+    Recipe.all.select do |r|
+      r.course == type
+    end
+  end
 end

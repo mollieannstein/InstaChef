@@ -1,7 +1,58 @@
 <div id="index-recipes">
-<% recipes.each do |r| %>
-  <div class="recipe_link">
-    <%= link_to r.name, recipe_path(r) %>
-  </div>
-<% end %>
-</end>
+<h2>Appetizers</h2>
+  <ol>
+    <% recipes.sort_courses("Appetizers").each do |r| %>
+    <li>
+      <%= link_to r.name, recipe_path(r), class: 'recipe-link' %>
+    </li>
+    <% end %>
+  </ol>
+<h2>Main Dishes</h2>
+  <ol>
+    <% recipes.sort_courses("Main Dishes").each do |r| %>
+    <li>
+      <%= link_to r.name, recipe_path(r), class: 'recipe-link' %>
+    </li>
+    <% end %>
+  </ol>
+<h2>Condiments and Sauces</h2>
+  <ol>
+    <% recipes.sort_courses("Condiments and Sauces").each do |r| %>
+    <li>
+      <%= link_to r.name, recipe_path(r), class: 'recipe-link' %>
+    </li>
+    <% end %>
+  </ol>
+<h2>Desserts</h2>
+  <ol>
+    <% recipes.sort_courses("Desserts").each do |r| %>
+    <li>
+      <%= link_to r.name, recipe_path(r), class: 'recipe-link' %>
+    </li>
+    <% end %>
+  </ol>
+<h2>Breads</h2>
+  <ol>
+    <% recipes.sort_courses("Breads").each do |r| %>
+    <li>
+      <%= link_to r.name, recipe_path(r), class: 'recipe-link' %>
+    </li>
+    <% end %>
+  </ol>
+<h2>Breakfast and Brunch</h2>
+  <ol>
+    <% recipes.sort_courses("Breakfast and Brunch").each do |r| %>
+    <li>
+      <%= link_to r.name, recipe_path(r), class: 'recipe-link' %>
+    </li>
+    <% end %>
+  </ol>
+<h2>Side Dishes</h2>
+  <ol>
+    <% recipes.sort_courses("Side Dishes").each do |r| %>
+    <li>
+      <%= link_to r.name, recipe_path(r), class: 'recipe-link' %>
+    </li>
+    <% end %>
+  </ol>
+</div>
