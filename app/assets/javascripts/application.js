@@ -128,7 +128,7 @@ $(document).ready(function(){
   });
 
   //ajax new recipe list
-  $('.recipe_div').on('click', 'a', function(event){
+  $('.recipe-div').on('click', 'a', function(event){
     event.preventDefault();
     var url = $(this).attr('href');
 
@@ -137,8 +137,8 @@ $(document).ready(function(){
       url: url
 
     }).done(function(response){
-      $('.recipe_div').empty();
-      $('.recipe_div').append(response);
+      $('.recipe-div').empty();
+      $('.recipe-div').append(response);
     });
   });
 
