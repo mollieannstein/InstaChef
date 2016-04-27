@@ -40,6 +40,7 @@ $(document).ready(function(){
       url: route
 
     }).done(function(response){
+      console.log(response);
       $('.recipe_div').append(response);
     });
   });

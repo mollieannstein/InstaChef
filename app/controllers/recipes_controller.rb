@@ -28,7 +28,7 @@ class RecipesController < ApplicationController
   def show
     @recipe = Recipe.find(params[:id])
     if request.xhr?
-      render partial: "show", layout: false, locals: { recipe: @recipe }
+      render partial: "show", layout: false, locals: { recipe: @recipe, procedure: @recipe.procedures }
     else
       render :show
     end
