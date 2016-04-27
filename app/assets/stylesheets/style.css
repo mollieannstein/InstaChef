@@ -262,16 +262,12 @@ iframe {
 .meat_conversions {
   display: none;
   margin: 3em auto;
-  max-width: 600px;
-}
-
-.temps {
-  float: right;
+  background-color: rgba(1, 187, 204, .4);
 }
 
 table > thead > tr > th {
   width: 190px;
-  text-align: center;
+  text-align: left;
   font-weight: bolder;
 }
 
@@ -279,30 +275,50 @@ table > tbody > tr > th {
   font-weight: bolder;
 }
 
+table > tbody > tr > td {
+  text-align: center;
+}
+
 table > tbody > tr {
   height: 45px;
+}
+
+table {
+  background-color: #efefef;
+  width: 500px;
+  height: 200px;
+  border-radius: 20px;
+}
+
+.table-bordered {
+  border: none;
 }
 
 
 .fluid_converter {
   display: none;
-  position: fixed;
-  top: 60%;
-  right: 60%;
+  position: inherit;
 }
 
 .weight_converter {
   display: none;
-  position: fixed;
-  top: 30%;
-  right: 32.5%;
+  position: inherit;
 }
 
 .page-header {
   font-size: 20px;
   letter-spacing: 1px;
+  font-family: 'Oxygen', sans-serif;
+}
+
+.table-title {
+  color: #01BBCC;
+  font-size: 25px;
+  font-weight: bolder;
+  text-align: center;
   font-family: 'Lily Script One', sans-serif;
 }
+
 /*
 body::after, body::before {
 
