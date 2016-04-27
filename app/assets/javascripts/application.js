@@ -126,4 +126,20 @@ $(document).ready(function(){
     event.preventDefault();
     $('.meat_conversions').slideToggle("slow");
   });
+
+  //ajax new recipe list
+  $('.recipe_div').on('click', 'a', function(event){
+    event.preventDefault();
+    var url = $(this).attr('href');
+
+    $.ajax({
+      type: 'GET',
+      url: url
+
+    }).done(function(response){
+      $('.recipe_div').empty();
+      $('.recipe_div').append(response);
+    });
+  });
+
 });
