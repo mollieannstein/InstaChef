@@ -7,9 +7,9 @@ require 'verbs'
 ############# REMOVE BEFORE PUSH ###########
 
 
-APP_KEY=""
-APP_ID=""
-YOUTUBE_API=""
+APP_KEY = ENV['API_KEY']
+APP_ID = ENV['YUMMLY_ID']
+YOUTUBE_API = ENV['YOUTUBE_API']
 
 
 
@@ -72,12 +72,8 @@ procedures.each do |item|
 
     # youtube json parse
 
-<<<<<<< HEAD
-    youtube_url = "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&q='cooking+#{term}'+term&key=#{YOUTUBE_API}"
-=======
     youtube_url = "https://www.googleapis.com/youtube/v3/search?orderby=relevance&channelId=UCIP7hCS2pcET5lI4PoDESUQ&part=snippet&maxResults=1&q=cooking+term+#{term}&key=#{YOUTUBE_API}"
 
->>>>>>> master
 
 
     youtube_uri = URI.parse(URI.escape(youtube_url))
