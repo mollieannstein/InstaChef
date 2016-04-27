@@ -24,7 +24,7 @@ yummly_rId_array.each do |rId|
   response = Net::HTTP.get(uri)
   response = JSON.parse(response)
 
-  r = Recipe.create(name: response["name"], image_url: response["images"][0]["hostedLargeUrl"], prep_time: response["totalTime"], servings: response["numberOfServings"])
+  r = Recipe.create(name: response["name"], image_url: response["images"][0]["hostedLargeUrl"], prep_time: response["totalTime"], servings: response["numberOfServings"], course: response["attributes"]["course"][0])
 
   ingredients = response["ingredientLines"]
   source_url = response["source"]["sourceRecipeUrl"]
