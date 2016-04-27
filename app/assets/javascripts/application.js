@@ -91,11 +91,18 @@ $(document).ready(function(){
     });
   });
 
+  //empty main div on logo click
   $('.navbar-header a').on('click', function(event){
     $('.recipe_div').empty();
   });
 
+  //slide toggle conversions from menu bar
   $('#myNavbar').on('click', '.conversions', function(event){
     event.preventDefault();
-  })
+  });
+
+  //slide toggle temperatures from menu bar
+  $('#myNavbar').on('click', '.temperatures', function(event){
+    event.preventDefault();
+  });
 });
