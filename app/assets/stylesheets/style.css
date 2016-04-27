@@ -180,10 +180,35 @@ iframe {
   width: 100%;
 }
 
+.meat-conversions {
+  display: none;
+  margin: 3em auto;
+  max-width: 600px;
+}
+
+.temps {
+  float: right;
+}
+
+table > thead > tr > th {
+  width: 190px;
+  text-align: center;
+  font-weight: bolder;
+}
+
+table > tbody > tr > th {
+  font-weight: bolder;
+}
+
+table > tbody > tr {
+  height: 45px;
+}
+
+
 .fluid_converter {
   display: none;
   position: fixed;
-  top: 30;
+  top: 60%;
   right: 60%;
 }
 
@@ -194,6 +219,11 @@ iframe {
   right: 32.5%;
 }
 
+.page-header {
+  font-size: 20px;
+  letter-spacing: 1px;
+  font-family: 'Lily Script One', sans-serif;
+}
 /*
 body::after, body::before {
 
