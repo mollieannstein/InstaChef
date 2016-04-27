@@ -91,7 +91,7 @@ $(document).ready(function(){
   });
 
   //append specific recipe to recipe div
-  $('.recipe_div').on('click', '.recipe_link a', function(event){
+  $(document).on('click', 'a.recipe_link', function(event){
     event.preventDefault();
 
     var url = $(this).attr('href');
