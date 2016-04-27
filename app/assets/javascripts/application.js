@@ -33,7 +33,6 @@ $(document).ready(function(){
       data: $data,
       url: path
     }).done(function(response){
-      console.log(response);
       $('#ingredients-div').empty();
       $('#ingredients-div').append(response);
     });

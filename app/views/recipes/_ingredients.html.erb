@@ -1,7 +1,7 @@
-<% yo = selected_servings_option(@servings_multiplier) %>
+<% menu_options = selected_servings_option(@servings_multiplier) %>
 
 <h6>Servings: <%= form_tag "#", :id => "converter" do %>
-  <%= select_tag "recipe", yo.html_safe %>
+  <%= select_tag "recipe", menu_options.html_safe %>
 <% end %></h6>
 <h6>Prep Time: <%= recipe.prep_time %></h6>
 <% recipe.ingredients.each do |i| %>
