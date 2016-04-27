@@ -190,7 +190,14 @@ iframe {
   float: right;
 }
 
-.converter {
+.fluid_converter {
+  display: none;
+  position: fixed;
+  top: 30;
+  right: 60%;
+}
+
+.weight_converter {
   display: none;
   position: fixed;
   top: 30%;

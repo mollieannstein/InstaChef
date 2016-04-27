@@ -1,3 +1,6 @@
+<div class="liquid_converter_container"></div>
+<div class="weight_converter_container"></div>
+
 <div class="main-searchbar" id="bloodhound">
 <%= form_tag recipes_path, method: :get, id: "search-form" do %>
 <span class="input-group input-group-lg form-inline">
@@ -6,7 +9,40 @@
 <% end %>
 </div>
 
-<div class="converter"><script type="text/javascript" id="WolframAlphaScript3fd3b91f7636e675cb61b05dbd2f7de5" src="//www.wolframalpha.com/widget/widget.jsp?id=3fd3b91f7636e675cb61b05dbd2f7de5&theme=teal&output=lightbox"></script></div>
-<div class="terms_div"></div>
-<div class="meat_div"></div>
-<div class="recipe_div"></div>
+<!-- fluid converter mess -->
+<div class="fluid_converter">
+  <img src="http://www.gourmetfood.org/images/gf-liquid-calc.gif" alt="Cooking Conversion Calculator" border="0"></a>
+  <script type="text/javascript" src="http://www.gourmetfood.org/cooking-conversions/liquid.calc.widget.js"></script>
+  <p><label for="gfc-quantity">Quantity: </label><input type="text" name="gfc-quantity" id="gfc-quantity" value="" /></p>
+  <p><select id="gfc-from">
+      <option>Milliliters</option>
+      <option>Deciliter</option>
+      <option>Teaspoon</option>
+      <option>Tablespoon</option>
+      <option>Fluid Ounce</option>
+      <option>Cups</option>
+      <option>Pint</option>
+      <option>Quarts</option>
+      <option>Liters</option>
+      <option>Gallons</option></select> to
+    <select id="gfc-to"><option>Milliliters</option>
+      <option>Deciliter</option>
+      <option>Teaspoon</option>
+      <option>Tablespoon</option>
+      <option>Fluid Ounce</option>
+      <option>Cups</option>
+      <option>Pint</option>
+      <option>Quarts</option>
+      <option>Liters</option>
+      <option>Gallons</option></select> </p>
+  <p><label for="gfc-result">Result: </label><input type="text" name="gfc-result" id="gfc-result" value="" /></p>
+  <p><input type="button" onclick="gfc_convert();" value="Convert"/></p><font size="1"></font>
+</div>
+
+<!-- Weight converter mess -->
+<div class="weight_converter">
+<img src="http://www.gourmetfood.org/images/gf-weight-calc.gif" alt="Cooking Conversion Calculator" border="0"></a>
+<script type="text/javascript" src="http://www.gourmetfood.org/cooking-conversions/weigth.calc.widget.js"></script>
+<p><label for="gfc-grams">Grams: </label><input type="text" name="gfc-grams" id="gfc-grams" value="" onchange="gfc_convert_weigth(this);" /></p>
+<p><label for="gfc-ounces">Ounces: </label><input type="text" name="gfc-ounces" id="gfc-ounces" value="" onchange="gfc_convert_weigth(this);" /></p>
+<p><input type="button" value="Convert"/></p><font size="1"></font></div>
