@@ -1,7 +1,6 @@
 class DashboardController < ApplicationController
 
   def temp
-
   end
 
   def conversion

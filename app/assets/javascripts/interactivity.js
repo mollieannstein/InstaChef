@@ -10,6 +10,7 @@ function recipeSearch(input) {
 var throttledSearch = _.throttle(recipeSearch, 300);
 
 $( document ).ready(function() {
+
     $(".form-control").keyup(function(event){
         $(".drop-down").remove();
         event.preventDefault();
@@ -19,7 +20,8 @@ $( document ).ready(function() {
         }
     });
 
-    $("mark").on("mouseover", function(){
+    $(document).on("mouseover", "mark", function(){
+      // console.log("yes");
       $("div").removeClass("hovered-term");
       text = $(this).text();
       termCard = $(".terms-box").find("#"+text);

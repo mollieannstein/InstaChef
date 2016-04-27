@@ -1,4 +1,5 @@
 module ApplicationHelper
+
   def highlight_ingredients(text, match_array)
     stuff = []
     match_array.each do |m|

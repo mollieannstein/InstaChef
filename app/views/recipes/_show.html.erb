@@ -3,9 +3,9 @@
 <!-- header -->
   <div class="row">
     <div class="page-header">
-      <h1><%= @recipe.name %></h1>
+      <h1><%= recipe.name %></h1>
     </div>
-      <p><img src="<%= @recipe.image_url %>"><p>
+      <p><img src="<%= recipe.image_url %>"><p>
   </div>
 
   <!-- ingredients div -->
@@ -14,7 +14,7 @@
       <div class="page-header">
         <h1><small>Ingredients</small></h1>
       </div>
-   <%= render partial: "ingredients", locals: { recipe: @recipe } %>
+   <%= render partial: "ingredients", locals: { recipe: recipe } %>
     </div>
 
     <!-- directins div -->
@@ -23,8 +23,8 @@
         <h1><small>Directions</small></h1>
       </div>
       <ol>
-      <% @recipe.directions.each do |direction| %>
-        <li><%= highlight_directions(direction.step, @recipe.recipe_procedures).html_safe %></li>
+      <% recipe.directions.each do |direction| %>
+        <li><%= highlight_directions(direction.step, recipe.recipe_procedures).html_safe %></li>
       <% end %>
       </ol>
     </div>
@@ -37,7 +37,7 @@
         <h1><small>Culinary Terms</small></h1>
       </div>
       <div class="scrollable">
-        <%= render partial: "procedures", locals: { procedure: @procedure } %>
+        <%= render partial: "procedures", locals: { procedure: procedure } %>
       </div>
     </div>
   </div>
