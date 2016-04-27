@@ -41,14 +41,31 @@ h4 {
   padding: 5px;
 }
 
-#index-recipes, #index-recipes > a {
-  margin: auto 60px;
-  font-size: 18px;
-  padding: 5px;
-  color: #e7e7e7;
+#index-recipes {
+  padding: 20px;
 }
 
-#term, #term > a{
+#index-recipes > li, .recipe-link {
+  font-size: 18px;
+  padding: 5px;
+  color: #01BBCC;
+}
+
+#index-recipes > ol {
+  padding-bottom: 10px;
+  margin: auto 90px;
+  font-size: 18px;
+  color: #01BBCC;
+}
+
+#index-recipes > h2 {
+  margin: auto 80px;
+  font-size: 20px;
+  padding: 5px;
+  color: #818181;
+}
+
+#term, #term > a {
   color: #818181;
   margin: auto 60px;
   color: #01BBCC;
