@@ -14,7 +14,9 @@
       <div class="page-header">
         <h1><small>Ingredients</small></h1>
       </div>
-   <%= render partial: "ingredients", locals: { recipe: recipe } %>
+      <div id="ingredients-div">
+        <%= render partial: "ingredients", locals: { recipe: recipe } %>
+      </div>
     </div>
 
     <!-- directins div -->

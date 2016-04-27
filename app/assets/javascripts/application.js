@@ -24,6 +24,8 @@ $(document).ready(function(){
   // look for dom element to listen to
   $('#converter').on('change', function(e){
     e.preventDefault();
+    alert($('#converter option:selected').text())
+    $('#ingredients-div').empty();
   });
 
 
@@ -97,18 +99,21 @@ $(document).ready(function(){
     $('.recipe_div').empty();
   });
 
-  //slide toggle conversions from menu bar
-  $('#myNavbar').on('click', '.conversions', function(event){
-    $('.conversions').append($('.liquid_converter_container'));
-    $('.fluid_converter').slideToggle("slow");
-
-    $('.conversions').append($('.weight_converter_container'));
-    $('.weight_converter').slideToggle("slow");
+  //slide toggle fluid_converter from menu bar
+  $('#myNavbar').on('click', 'ul li ul #fluid', function(event){
     event.preventDefault();
+    $('.fluid_converter').slideToggle("slow");
+  });
+
+  // slide toggle weight_converter from menu bar
+  $('#myNavbar').on('click', 'ul li ul #weight', function(event){
+    event.preventDefault();
+    $('.weight_converter').slideToggle("slow");
   });
 
   //slide toggle temperatures from menu bar
   $('#myNavbar').on('click', '.temperatures', function(event){
     event.preventDefault();
+    $('.meat_conversions').slideToggle("slow");
   });
 });

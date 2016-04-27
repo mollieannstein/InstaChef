@@ -1,7 +1,12 @@
 <% procedures.each do |procedure| %>
-  <div class="row">
-    <h1><a href="<%= procedure.youtube_url %>"><%= procedure.term %></a></h1>
-    <li style="list-style-type:none"><%= procedure.instructions %></li>
+<div class="row">
+  <div class="col-sm-4">
+    <div id="term"><a href="<%= procedure.youtube_url %>"><%= procedure.term.upcase %></a></div>
+  </div>
+  <div class="col-sm-8">
+    <li id="definition"><%= procedure.instructions %></li>
     <br>
   </div>
+</div>
 <% end %>
+
