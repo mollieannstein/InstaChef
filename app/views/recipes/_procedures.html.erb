@@ -1,4 +1,4 @@
-<% @recipe.procedures.uniq.each do |p| %>
+<% recipe.procedures.uniq.each do |p| %>
   <div id="<%= p.term.downcase %>" class="recipe-procedure">
     <div class="panel-default"><%=p.term %>
     </div>
