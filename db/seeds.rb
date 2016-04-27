@@ -70,7 +70,7 @@ procedures.each do |item|
 
     # youtube json parse
 
-    youtube_url = "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&q=cooking+term#{term}&key=#{YOUTUBE_API}"
+    youtube_url = "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&q=cooking+term+#{term}&key=#{YOUTUBE_API}"
 
 
     youtube_uri = URI.parse(URI.escape(youtube_url))
