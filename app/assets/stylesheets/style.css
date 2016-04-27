@@ -180,6 +180,11 @@ iframe {
   width: 100%;
 }
 
+.meat-conversions {
+  /*display: none;*/
+  margin: 0 auto;
+  max-width: 600px;
+}
 /*
 body::after, body::before {
 
