@@ -22,10 +22,22 @@
 
 $(document).ready(function(){
   // look for dom element to listen to
+
+  // servings converter
   $('#converter').on('change', function(e){
     e.preventDefault();
-    alert($('#converter option:selected').text())
-    $('#ingredients-div').empty();
+    //alert($('#converter option:selected').text())
+    //$('#ingredients-div').empty();
+    var path = window.location.pathname;
+    var $data = {servings_multiplier: parseInt($('#converter option:selected').text())};
+
+    $.ajax({
+      type: 'GET',
+      data: $data,
+      url: path
+    }).done(function(response){
+      console.log(response)
+    });
   });
 
 
