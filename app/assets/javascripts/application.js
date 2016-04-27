@@ -99,8 +99,11 @@ $(document).ready(function(){
 
   //slide toggle conversions from menu bar
   $('#myNavbar').on('click', '.conversions', function(event){
-    $('.conversions').after($('.converter'));
-    $('.converter').slideToggle("slow");
+    $('.conversions').append($('.liquid_converter_container'));
+    $('.fluid_converter').slideToggle("slow");
+
+    $('.conversions').append($('.weight_converter_container'));
+    $('.weight_converter').slideToggle("slow");
     event.preventDefault();
   });
 
