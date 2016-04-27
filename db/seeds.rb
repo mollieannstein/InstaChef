@@ -70,7 +70,7 @@ procedures.each do |item|
 
     # youtube json parse
 
-    youtube_url = "https://www.googleapis.com/youtube/v3/search?orderby=relevance&genre=23&channelId=UCIP7hCS2pcET5lI4PoDESUQ&channelId=UC4tAgeVdaNB5vD_mBoxg50w&part=snippet&maxResults=1&q=cooking+term+#{term}&key=#{YOUTUBE_API}"
+    youtube_url = "https://www.googleapis.com/youtube/v3/search?orderby=relevance&channelId=UCIP7hCS2pcET5lI4PoDESUQ&channelId=UC4tAgeVdaNB5vD_mBoxg50w&part=snippet&maxResults=1&q=cooking+term+#{term}&key=#{YOUTUBE_API}"
 
 
 
