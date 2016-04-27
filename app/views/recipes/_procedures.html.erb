@@ -1,6 +1,8 @@
 <% @recipe.procedures.uniq.each do |p| %>
   <div id="<%= p.term.downcase %>" class="recipe-procedure">
-    <div class="panel-default"><a href="<%= p.youtube_url %>"><%=p.term %></a></div>
+    <div class="panel-default"><%=p.term %>
+    </div>
+      <iframe src="<%= p.youtube_url %>" allowfullscreen=""></iframe>
     <div class="side-bar"><%= p.instructions %></div>
   </div>
 <% end %>
