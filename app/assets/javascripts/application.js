@@ -24,18 +24,15 @@ $(document).ready(function(){
   // look for dom element to listen to
 
   // servings converter
-  $('#converter').on('change', function(e){
+  $('#ingredients-div').on('change', function(e){
     e.preventDefault();
-    alert($('#converter option:selected').text())
     var path = window.location.pathname;
     var $data = { servings_multiplier: $('#converter option:selected').text() };
-    //alert($data["servings_multiplier"]);
     $.ajax({
       type: 'GET',
       data: $data,
       url: path
     }).done(function(response){
-      console.log(response);
       $('#ingredients-div').empty();
       $('#ingredients-div').append(response);
     });
