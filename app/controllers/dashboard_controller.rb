@@ -4,7 +4,11 @@ class DashboardController < ApplicationController
   end
 
   def conversion
-    render :placeholder
+    if request.xhr?
+      render partial: "converter", layout: false
+    else
+      render :index
+    end
   end
 
   def index
