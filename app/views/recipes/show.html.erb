@@ -23,7 +23,7 @@
     </div>
     <ol>
     <% @recipe.directions.each do |direction| %>
-      <li><%= highlight_directions(direction.step, @recipe.recipe_procedures).html_safe %></li>
+      <li id="directions"><%= highlight_directions(direction.step, @recipe.recipe_procedures).html_safe %></li>
     <% end %>
     </ol>
   </div>

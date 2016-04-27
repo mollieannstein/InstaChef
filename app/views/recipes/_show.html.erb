@@ -15,18 +15,18 @@
         <h1><small>Ingredients</small></h1>
       </div>
       <div id="ingredients-div">
-        <%= render partial: "ingredients", locals: { recipe: recipe, servings: @servings_multiplier} %>
+        <%= render partial: "ingredients", locals: { recipe: recipe, servings: servings_multiplier} %>
       </div>
     </div>
 
-    <!-- directins div -->
+    <!-- directions div -->
     <div class="row">
       <div class="page-header directions-box">
         <h1><small>Directions</small></h1>
       </div>
       <ol>
       <% recipe.directions.each do |direction| %>
-        <li><%= highlight_directions(direction.step, recipe.recipe_procedures).html_safe %></li>
+        <li id="directions"><%= highlight_directions(direction.step, recipe.recipe_procedures).html_safe %></li>
       <% end %>
       </ol>
     </div>

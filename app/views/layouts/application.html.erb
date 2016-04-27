@@ -3,7 +3,7 @@
 <head>
   <link href='https://fonts.googleapis.com/css?family=Oxygen|Lobster|Maven+Pro|Questrial|Poppins|Didact+Gothic|Marmelad|Overlock|Lily+Script+One' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="css/whhg.css">
-  <%= favicon_link_tag 'favicon.ico'%>
+  <%= favicon_link_tag 'chef.png'%>
   <title>InstaChef</title>
   <%= stylesheet_link_tag 'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
@@ -39,17 +39,17 @@
   </div>
 </nav>
 
-<div class="fluid_converter bg-grey">
+<div class="fluid-converter bg-grey">
   <%= render partial: "dashboard/fluidconverter", layout: false %>
 </div>
 
 <!-- Weight converter mess -->
-<div class="weight_converter bg-grey">
+<div class="weight-converter bg-grey">
   <%= render partial: "dashboard/weight_converter", layout: false %>
 </div>
 
 
-<div class="meat_conversions bg-grey">
+<div class="meat-conversions">
   <%= render partial: 'dashboard/meatconversions', layout: false %>
 </div>
 
