@@ -24,6 +24,8 @@ $(document).ready(function(){
   // look for dom element to listen to
   $('#converter').on('change', function(e){
     e.preventDefault();
+    alert($('#converter option:selected').text())
+    $('#ingredients-div').empty();
   });
 
 
