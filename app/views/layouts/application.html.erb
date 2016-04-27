@@ -21,6 +21,7 @@
     </button>
       <a class="navbar-brand logo" href="/">InstaChef</a>
     </div>
+
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
         <li class='conversions dropdown'><a href="#" class="dropdown-toggle" data-toggle="dropdown">CONVERSIONS<b class="caret"></b></a>
@@ -34,8 +35,19 @@
         <li class='all-recipes'><a href="/recipes">ALL RECIPES</a></li>
       </ul>
     </div>
+
   </div>
 </nav>
+
+<!-- fluid converter mess -->
+<div class="fluid_converter">
+  <%= render partial: "fluid_converter", layout: false %>
+</div>
+
+<!-- Weight converter mess -->
+<div class="weight_converter">
+  <%= render partial: "weight_converter", layout: false %>
+</div>
 
 <div class="meat-conversions">
   <%= render partial: 'meatconversions'%>

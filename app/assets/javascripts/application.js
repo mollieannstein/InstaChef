@@ -99,12 +99,16 @@ $(document).ready(function(){
     $('.recipe_div').empty();
   });
 
-  //slide toggle conversions from menu bar
-  $('#myNavbar').on('click', '.conversions', function(event){
-    $('.fluid_converter').slideToggle("slow");
-
-    $('.weight_converter').slideToggle("slow");
+  //slide toggle fluid_converter from menu bar
+  $('#myNavbar').on('click', 'ul li ul #fluid', function(event){
     event.preventDefault();
+    $('.fluid_converter').slideToggle("slow");
+  });
+
+  // slide toggle weight_converter from menu bar
+  $('#myNavbar').on('click', 'ul li ul #weight', function(event){
+    event.preventDefault();
+    $('.weight_converter').slideToggle("slow");
   });
 
   //slide toggle temperatures from menu bar
