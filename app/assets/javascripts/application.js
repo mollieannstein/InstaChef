@@ -114,5 +114,6 @@ $(document).ready(function(){
   //slide toggle temperatures from menu bar
   $('#myNavbar').on('click', '.temperatures', function(event){
     event.preventDefault();
+    $('.meat_conversions').slideToggle("slow");
   });
 });
