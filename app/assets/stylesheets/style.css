@@ -132,7 +132,6 @@ mark {
 .panel {
   max-width: 500px;
   margin: 0 auto;
-  height:;
 }
 
 .panel-heading {
@@ -179,6 +178,13 @@ mark {
 iframe {
   height: 100%;
   width: 100%;
+}
+
+.converter {
+  display: none;
+  position: fixed;
+  top: 30%;
+  right: 32.5%;
 }
 
 /*
