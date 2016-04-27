@@ -1,4 +1,6 @@
 module ApplicationHelper
+  def selected_servings_option(servings)
+  end
 
   def highlight_ingredients(text, match_array)
     stuff = []

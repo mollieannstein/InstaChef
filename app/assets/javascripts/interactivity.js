@@ -21,11 +21,14 @@ $( document ).ready(function() {
     });
 
     $(document).on("mouseover", "mark", function(){
-      // console.log("yes");
       $("div").removeClass("hovered-term");
-      text = $(this).text();
-      termCard = $(".terms-box").find("#"+text);
-      termCard.addClass("hovered-term");
+      var container = ".scrollable";
+      text = $(this).text().toLowerCase();
+      termCard = $(container).find("#"+text);
+      $(container).prepend(termCard).scrollTop();
+      $(termCard).addClass("hovered-term");
+      $
     });
 
 });
+

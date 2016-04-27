@@ -22,10 +22,23 @@
 
 $(document).ready(function(){
   // look for dom element to listen to
+
+  // servings converter
   $('#converter').on('change', function(e){
     e.preventDefault();
     alert($('#converter option:selected').text())
-    $('#ingredients-div').empty();
+    var path = window.location.pathname;
+    var $data = { servings_multiplier: $('#converter option:selected').text() };
+    //alert($data["servings_multiplier"]);
+    $.ajax({
+      type: 'GET',
+      data: $data,
+      url: path
+    }).done(function(response){
+      console.log(response);
+      $('#ingredients-div').empty();
+      $('#ingredients-div').append(response);
+    });
   });
 
 
@@ -99,16 +112,21 @@ $(document).ready(function(){
     $('.recipe_div').empty();
   });
 
-  //slide toggle conversions from menu bar
-  $('#myNavbar').on('click', '.conversions', function(event){
-    $('.fluid_converter').slideToggle("slow");
-
-    $('.weight_converter').slideToggle("slow");
+  //slide toggle fluid_converter from menu bar
+  $('#myNavbar').on('click', 'ul li ul #fluid', function(event){
     event.preventDefault();
+    $('.fluid_converter').slideToggle("slow");
+  });
+
+  // slide toggle weight_converter from menu bar
+  $('#myNavbar').on('click', 'ul li ul #weight', function(event){
+    event.preventDefault();
+    $('.weight_converter').slideToggle("slow");
   });
 
   //slide toggle temperatures from menu bar
   $('#myNavbar').on('click', '.temperatures', function(event){
     event.preventDefault();
+    $('.meat_conversions').slideToggle("slow");
   });
 });
