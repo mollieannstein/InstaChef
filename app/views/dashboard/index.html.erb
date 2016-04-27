@@ -1,6 +1,8 @@
+<!-- containers for converters -->
 <div class="liquid_converter_container"></div>
 <div class="weight_converter_container"></div>
 
+<!-- search bar -->
 <div class="main-searchbar" id="bloodhound">
 <%= form_tag recipes_path, method: :get, id: "search-form" do %>
 <span class="input-group input-group-lg form-inline">
@@ -8,6 +10,9 @@
     <%= text_field_tag :search, params[:search], placeholder: 'Find a recipe...', class: 'typeahead form-control'%>
 <% end %>
 </div>
+
+<!-- empty container for all appends -->
+<div class="recipe_div"></div>
 
 <!-- fluid converter mess -->
 <div class="fluid_converter">
