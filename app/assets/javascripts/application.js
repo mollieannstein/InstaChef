@@ -26,17 +26,18 @@ $(document).ready(function(){
   // servings converter
   $('#converter').on('change', function(e){
     e.preventDefault();
-    //alert($('#converter option:selected').text())
-    //$('#ingredients-div').empty();
+    alert($('#converter option:selected').text())
     var path = window.location.pathname;
-    var $data = {servings_multiplier: parseInt($('#converter option:selected').text())};
-
+    var $data = { servings_multiplier: $('#converter option:selected').text() };
+    //alert($data["servings_multiplier"]);
     $.ajax({
       type: 'GET',
       data: $data,
       url: path
     }).done(function(response){
-      console.log(response)
+      console.log(response);
+      $('#ingredients-div').empty();
+      $('#ingredients-div').append(response);
     });
   });
 
