@@ -180,10 +180,8 @@ mark {
 
 #highlighted {
   font-family: 'Oxygen', sans-serif;
-  color: white;
-  font-size: 18px;
-  border: 1px solid rgba(1, 187, 204, .4);
-  background-color: rgba(1, 187, 204, .4);
+  color: #818181;
+  font-size: 20px;
   border-radius: 8px;
   padding: 5px;
   text-align: center;
@@ -214,6 +212,10 @@ mark {
   position: relative;
   text-align: left;
   color: #00757F;
+}
+
+#directions {
+  max-width: 500px;
 }
 
 .scrollable {
@@ -259,11 +261,13 @@ iframe {
   background-color: transparent;
 }
 
-.meat_conversions {
+.meat-conversions {
   display: none;
   margin: 3em auto;
   background-color: rgba(1, 187, 204, .4);
 }
+
+
 
 table > thead > tr > th {
   width: 190px;
@@ -290,17 +294,13 @@ table {
   border-radius: 20px;
 }
 
-.table-bordered {
-  border: none;
-}
 
-
-.fluid_converter {
+.fluid-converter {
   display: none;
   position: inherit;
 }
 
-.weight_converter {
+.weight-converter {
   display: none;
   position: inherit;
 }
@@ -318,6 +318,7 @@ table {
   text-align: center;
   font-family: 'Lily Script One', sans-serif;
 }
+
 
 /*
 body::after, body::before {

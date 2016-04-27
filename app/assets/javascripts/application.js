@@ -43,7 +43,7 @@ $(document).ready(function(){
   $('.main-searchbar').on('click', '.drop-down .search_output a', function(event){
     event.preventDefault();
 
-    $('.recipe_div').empty();
+    $('.recipe-div').empty();
     $('.drop-down').hide();
     var route = $(this).attr('href');
 
@@ -53,7 +53,7 @@ $(document).ready(function(){
 
     }).done(function(response){
       console.log(response);
-      $('.recipe_div').append(response);
+      $('.recipe-div').append(response);
     });
   });
 
@@ -61,14 +61,14 @@ $(document).ready(function(){
   $('#myNavbar').on('click', '.terms', function(event){
     event.preventDefault();
 
-    $('.recipe_div').empty();
+    $('.recipe-div').empty();
 
     $.ajax({
       type: 'GET',
       url: '/procedures'
 
     }).done(function(response){
-      $('.recipe_div').append(response);
+      $('.recipe-div').append(response);
     });
   });
 
@@ -76,14 +76,14 @@ $(document).ready(function(){
   $('#myNavbar').on('click', '.all-recipes', function(event){
     event.preventDefault();
 
-    $('.recipe_div').empty();
+    $('.recipe-div').empty();
 
     $.ajax({
       type: 'GET',
       url: '/allrecipes'
 
     }).done(function(response){
-      $('.recipe_div').append(response);
+      $('.recipe-div').append(response);
     });
   });
 
@@ -92,7 +92,7 @@ $(document).ready(function(){
     event.preventDefault();
 
     var url = $(this).attr('href');
-    $('.recipe_div').empty();
+    $('.recipe-div').empty();
 
 
     $.ajax({
@@ -100,31 +100,31 @@ $(document).ready(function(){
       url: url
 
     }).done(function(response){
-      $('.recipe_div').append(response);
+      $('.recipe-div').append(response);
     });
   });
 
   //empty main div on logo click
   $('.navbar-header a').on('click', function(event){
-    $('.recipe_div').empty();
+    $('.recipe-div').empty();
   });
 
   //slide toggle fluid_converter from menu bar
   $('#myNavbar').on('click', 'ul li ul #fluid', function(event){
     event.preventDefault();
-    $('.fluid_converter').slideToggle("slow");
+    $('.fluid-converter').slideToggle("slow");
   });
 
   // slide toggle weight_converter from menu bar
   $('#myNavbar').on('click', 'ul li ul #weight', function(event){
     event.preventDefault();
-    $('.weight_converter').slideToggle("slow");
+    $('.weight-converter').slideToggle("slow");
   });
 
   //slide toggle temperatures from menu bar
   $('#myNavbar').on('click', '.temperatures', function(event){
     event.preventDefault();
-    $('.meat_conversions').slideToggle("slow");
+    $('.meat-conversions').slideToggle("slow");
   });
 
   //ajax new recipe list
