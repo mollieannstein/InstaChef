@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Oxygen|Lobster|Maven+Pro|Questrial|Poppins|Didact+Gothic|Marmelad|Overlock);
+@import url(https://fonts.googleapis.com/css?family=Oxygen|Lobster|Maven+Pro|Questrial|Poppins|Didact+Gothic|Marmelad|Overlock|Lily+Script+One);
 
 body {
     font-family: 'Oxygen', sans-serif;
@@ -53,9 +53,13 @@ h4 {
   margin: 7px;
 }
 
+
 .logo {
-    color: #01BBCC;
-    font-size: 50px;
+  color: #01BBCC;
+  font-size: 50px;
+  margin: 10px;
+  font-family: 'Lily Script One', sans-serif;
+  letter-spacing: 1px;
 }
 
 .navbar {
@@ -172,6 +176,10 @@ mark {
   height: 650px;
 }
 
+iframe {
+  height: 100%;
+  width: 100%;
+}
 
 /*
 body::after, body::before {

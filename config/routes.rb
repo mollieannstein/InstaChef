@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
   get '/temperatures' => 'dashboard#temp'
   get '/conversions' => 'dashboard#conversion'
+  get '/allrecipes' => 'recipes#allrecipes'
 
   root "dashboard#index"
 

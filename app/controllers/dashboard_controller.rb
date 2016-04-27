@@ -1,7 +1,6 @@
 class DashboardController < ApplicationController
 
   def temp
-
   end
 
   def conversion
@@ -10,6 +9,10 @@ class DashboardController < ApplicationController
 
   def index
     @procedures = Procedure.all.sort_count_frequency
-    render :index
+    if request.xhr?
+      render :index
+    else
+      render :index
+    end
   end
 end
