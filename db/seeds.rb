@@ -6,9 +6,11 @@ require 'verbs'
 
 ############# REMOVE BEFORE PUSH ###########
 
+
 APP_KEY = ENV['API_KEY']
 APP_ID = ENV['YUMMLY_ID']
 YOUTUBE_API = ENV['YOUTUBE_API']
+
 
 
 yummly_rId_array = ["Chicken-And-Dumplings-I-Allrecipes", "Salsa-Allrecipes", "Horseradish-Sauce-Allrecipes_1", "Snow-Peak-Frosting-Allrecipes", "Classic-Candied-Sweet-Potatoes-Allrecipes", "Butterscotch-Drops-Allrecipes", "Tropical-Grilled-Chicken-Breast-AllRecipes-39303", "Bannock-Allrecipes", "Good-Old-Fashioned-Pancakes-546169", "Best-Spanish-Rice-Allrecipes"]
@@ -70,7 +72,8 @@ procedures.each do |item|
 
     # youtube json parse
 
-    youtube_url = "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&q=cooking+term+#{term}&key=#{YOUTUBE_API}"
+    youtube_url = "https://www.googleapis.com/youtube/v3/search?orderby=relevance&channelId=UCIP7hCS2pcET5lI4PoDESUQ&part=snippet&maxResults=1&q=cooking+term+#{term}&key=#{YOUTUBE_API}"
+
 
 
     youtube_uri = URI.parse(URI.escape(youtube_url))
