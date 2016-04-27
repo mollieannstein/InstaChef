@@ -39,19 +39,17 @@
   </div>
 </nav>
 
-
-<!-- fluid converter mess -->
-<div class="fluid_converter bg-grey container-fluid">
-  <%= render partial: "fluid_converter", layout: false %>
+<div class="fluid_converter">
+  <%= render partial: "dashboard/fluidconverter", layout: false %>
 </div>
 
 <!-- Weight converter mess -->
-<div class="weight_converter bg-grey container-fluid">
-  <%= render partial: "weight_converter", layout: false %>
+<div class="weight_converter">
+  <%= render partial: "dashboard/weight_converter", layout: false %>
 </div>
 
-<div class="meat_conversions bg-grey container-fluid">
-  <%= render partial: 'meatconversions', layout: false %>
+<div class="meat_conversions">
+  <%= render partial: 'dashboard/meatconversions', layout: false %>
 </div>
 
 
