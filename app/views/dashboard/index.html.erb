@@ -16,38 +16,10 @@
 
 <!-- fluid converter mess -->
 <div class="fluid_converter">
-  <img src="http://www.gourmetfood.org/images/gf-liquid-calc.gif" alt="Cooking Conversion Calculator" border="0"></a>
-  <script type="text/javascript" src="http://www.gourmetfood.org/cooking-conversions/liquid.calc.widget.js"></script>
-  <p><label for="gfc-quantity">Quantity: </label><input type="text" name="gfc-quantity" id="gfc-quantity" value="" /></p>
-  <p><select id="gfc-from">
-      <option>Milliliters</option>
-      <option>Deciliter</option>
-      <option>Teaspoon</option>
-      <option>Tablespoon</option>
-      <option>Fluid Ounce</option>
-      <option>Cups</option>
-      <option>Pint</option>
-      <option>Quarts</option>
-      <option>Liters</option>
-      <option>Gallons</option></select> to
-    <select id="gfc-to"><option>Milliliters</option>
-      <option>Deciliter</option>
-      <option>Teaspoon</option>
-      <option>Tablespoon</option>
-      <option>Fluid Ounce</option>
-      <option>Cups</option>
-      <option>Pint</option>
-      <option>Quarts</option>
-      <option>Liters</option>
-      <option>Gallons</option></select> </p>
-  <p><label for="gfc-result">Result: </label><input type="text" name="gfc-result" id="gfc-result" value="" /></p>
-  <p><input type="button" onclick="gfc_convert();" value="Convert"/></p><font size="1"></font>
+  <%= render partial: "fluid_converter", layout: false %>
 </div>
 
 <!-- Weight converter mess -->
 <div class="weight_converter">
-<img src="http://www.gourmetfood.org/images/gf-weight-calc.gif" alt="Cooking Conversion Calculator" border="0"></a>
-<script type="text/javascript" src="http://www.gourmetfood.org/cooking-conversions/weigth.calc.widget.js"></script>
-<p><label for="gfc-grams">Grams: </label><input type="text" name="gfc-grams" id="gfc-grams" value="" onchange="gfc_convert_weigth(this);" /></p>
-<p><label for="gfc-ounces">Ounces: </label><input type="text" name="gfc-ounces" id="gfc-ounces" value="" onchange="gfc_convert_weigth(this);" /></p>
-<p><input type="button" value="Convert"/></p><font size="1"></font></div>
+  <%= render partial: "weight_converter", layout: false %>
+</div>
