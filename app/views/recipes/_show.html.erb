@@ -15,7 +15,7 @@
         <h1><small>Ingredients</small></h1>
       </div>
       <div id="ingredients-div">
-        <%= render partial: "ingredients", locals: { recipe: recipe } %>
+        <%= render partial: "ingredients", locals: { recipe: recipe, servings: @servings_multiplier} %>
       </div>
     </div>
 
