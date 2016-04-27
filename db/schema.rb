@@ -51,6 +51,7 @@ ActiveRecord::Schema.define(version: 20160422220558) do
     t.string   "image_url"
     t.integer  "servings"
     t.string   "prep_time"
+    t.string   "course"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
