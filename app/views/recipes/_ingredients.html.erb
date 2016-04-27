@@ -1,4 +1,4 @@
-
+<%= selected_servings_option(@servings_multiplier) %>
 
 <h6>Servings: <%= form_tag "#", :id => "converter" do %>
   <%= select_tag "recipe", "<option>#{@recipe.servings*0.5}</option><option selected>#{@recipe.servings}</option><option>#{@recipe.servings*2}</option><option>#{@recipe.servings*4}</option>".html_safe %>

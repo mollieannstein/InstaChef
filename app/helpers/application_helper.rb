@@ -1,5 +1,6 @@
 module ApplicationHelper
   def selected_servings_option(servings)
+    return "yooooooo"
   end
 
   def highlight_ingredients(text, match_array)
