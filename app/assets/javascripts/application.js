@@ -99,7 +99,7 @@ $(document).ready(function(){
 
   //slide toggle conversions from menu bar
   $('#myNavbar').on('click', '.conversions', function(event){
-    $('.conversions').append($('.converter'));
+    $('.conversions').after($('.converter'));
     $('.converter').slideToggle("slow");
     event.preventDefault();
   });
