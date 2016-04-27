@@ -26,14 +26,10 @@ h4 {
     font-weight: 400;
     margin-bottom: 30px;
 }
-.jumbotron {
-    background-color: #01BBCC;
-    color: #fff;
-    padding: 100px 25px;
-    font-family: 'Oxygen', sans-serif;
-}
+
 .container-fluid {
     padding: 60px 50px;
+    border-radius: 10px;
 }
 
 .bg-grey {
@@ -43,6 +39,29 @@ h4 {
 .recipe-procedure {
   margin: 5px;
   padding: 5px;
+}
+
+#index-recipes, #index-recipes > a {
+  margin: auto 60px;
+  font-size: 18px;
+  padding: 5px;
+  color: #e7e7e7;
+}
+
+#term, #term > a{
+  color: #818181;
+  margin: auto 60px;
+  color: #01BBCC;
+  font-size: 18px;
+  text-align: right;
+  padding: 5px;
+}
+
+#definition {
+  margin: auto 60px;
+  list-style: none;
+  font-size: 16px;
+  text-align: left;
 }
 
 .hovered-term {
@@ -89,6 +108,19 @@ h4 {
   padding: 10px;
 }
 
+.catch-phrase {
+  color: rgba(1, 187, 204, .5);
+  text-align: center;
+  margin-top: 40px;
+  font-size: 30px;
+  letter-spacing: 1px;
+  font-family: 'Lily Script One', sans-serif;
+}
+
+.icon-chef {
+  font-size: 50px;
+}
+
 .main-searchbar {
   padding: 30px;
 }
@@ -127,6 +159,18 @@ mark {
   background-color: rgba(1, 187, 204, .4);
   border-radius: 8px;
   padding: 5px;
+}
+
+#highlighted {
+  font-family: 'Oxygen', sans-serif;
+  color: white;
+  font-size: 18px;
+  border: 1px solid rgba(1, 187, 204, .4);
+  background-color: rgba(1, 187, 204, .4);
+  border-radius: 8px;
+  padding: 5px;
+  text-align: center;
+  font-weight: bolder;
 }
 
 .panel {
@@ -178,6 +222,24 @@ mark {
 iframe {
   height: 100%;
   width: 100%;
+}
+
+.dropdown-menu {
+  position: inherit;
+  background-color: #e7e7e7;
+  border: 1px solid #e7e7e7;
+  font-family: 'Oxygen', sans-serif;
+}
+
+.dropdown-menu > li > a {
+  letter-spacing: 3px;
+  color: #818181;
+  font-size: 13px;
+}
+
+.dropdown-menu > li > a:hover {
+  letter-spacing: 3px;
+  background-color: transparent;
 }
 
 .meat-conversions {

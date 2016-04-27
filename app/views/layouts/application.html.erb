@@ -2,6 +2,7 @@
 <html>
 <head>
   <link href='https://fonts.googleapis.com/css?family=Oxygen|Lobster|Maven+Pro|Questrial|Poppins|Didact+Gothic|Marmelad|Overlock|Lily+Script+One' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="css/whhg.css">
   <%= favicon_link_tag 'favicon.ico'%>
   <title>InstaChef</title>
   <%= stylesheet_link_tag 'application', media: 'all' %>
@@ -22,8 +23,13 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
+        <li class='conversions dropdown'><a href="#" class="dropdown-toggle" data-toggle="dropdown">CONVERSIONS<b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li id="fluid"><a href=''>Fluid Converter</a></li>
+            <li id="weight"><a href=''>Weight Converter</a></li>
+          </ul>
+        </li>
         <li class='temperatures'><a href="/temperatures">MEAT TEMPERATURES</a></li>
-        <li class='conversions'><a href="">CONVERSIONS</a></li>
         <li class='terms'><a href="/procedures">CULINARY TERMS</a></li>
         <li class='all-recipes'><a href="/recipes">ALL RECIPES</a></li>
       </ul>
@@ -33,6 +39,12 @@
 
 <div class="meat-conversions">
   <%= render partial: 'meatconversions'%>
+</div>
+
+<div class="container-fluid bg-grey catch-phrase">
+  <i class="icon-chef"></i>
+  <div>...because you don't need to be a chef to cook</div>
+
 </div>
 
 <div class="container-fluid">
