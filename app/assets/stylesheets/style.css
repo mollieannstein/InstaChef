@@ -185,6 +185,14 @@ iframe {
   margin: 0 auto;
   max-width: 600px;
 }
+
+.converter {
+  display: none;
+  position: fixed;
+  top: 30%;
+  right: 32.5%;
+}
+
 /*
 body::after, body::before {
 
