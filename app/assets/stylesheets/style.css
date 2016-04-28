@@ -1,9 +1,17 @@
 @import url(https://fonts.googleapis.com/css?family=Oxygen|Lobster|Maven+Pro|Questrial|Poppins|Didact+Gothic|Marmelad|Overlock|Lily+Script+One);
 
+.background {
+  background-image: url("board.jpg");
+  background-repeat: no-repeat;
+  background-position: top center;
+  opacity: .7;
+  margin-bottom: 0;
+}
+
 body {
     font-family: 'Oxygen', sans-serif;
     line-height: 1.8;
-    color: #818181;
+    font-color: #818181;
 }
 
 .side-bar {
@@ -32,8 +40,16 @@ h4 {
     border-radius: 10px;
 }
 
+.container {
+  margin-bottom: 0;
+  padding: 0px 50px;
+}
+
 .bg-grey {
     background-color: #f6f6f6;
+    opacity: .9;
+    border-radius: 20px;
+    margin: 40px;
 }
 
 .recipe-procedure {
@@ -129,7 +145,7 @@ h4 {
 }
 
 .catch-phrase {
-  color: rgba(1, 187, 204, .5);
+  color: rgba(1, 187, 204, .8);
   text-align: center;
   margin-top: 40px;
   font-size: 30px;
@@ -175,8 +191,8 @@ mark {
   font-family: 'Oxygen', sans-serif;
   color: white;
   font-size: 16px;
-  border: 1px solid rgba(1, 187, 204, .4);
-  background-color: rgba(1, 187, 204, .4);
+  border: 1px solid rgba(1, 187, 204, .7);
+  background-color: rgba(1, 187, 204, .7);
   border-radius: 8px;
   padding: 5px;
 }
@@ -230,7 +246,7 @@ mark {
 }
 
 .scrollable {
-  max-height: 750px;
+  max-height: 500px;
   overflow-y: scroll;
   float: right;
 }

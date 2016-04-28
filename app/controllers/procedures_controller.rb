@@ -6,7 +6,7 @@ class ProceduresController < ApplicationController
   def index
     @procedures = Procedure.all.sort_count_frequency
       if request.xhr?
-        render partial: "procedure", locals: { procedures: @procedures }
+        render partial: "procedure", layout: false, locals: { procedures: @procedures }
       else
         render :index
       end

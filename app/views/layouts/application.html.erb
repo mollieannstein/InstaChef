@@ -42,31 +42,30 @@
 
 <div class="converter"></div>
 
-<div class="meat-conversions container-fluid">
+<div class="meat-conversions container">
   <%= render partial: 'dashboard/meatconversions', layout: false %>
 </div>
 
 
-<div class="container-fluid bg-grey catch-phrase">
-  <i class="icon-chef"></i>
-  <div>...because you don't need to be a chef to cook</div>
 
-</div>
-
-<div class="container-fluid">
+<div class="container-fluid background">
   <div class="row">
     <div class="col-sm-12">
-      </div>
-      </div>
+    <div class="container-fluid bg-grey catch-phrase">
+        <i class="icon-chef"></i>
+      <div>...because you don't need to be a chef to cook</div>
+    </div>
+    </div>
+  </div>
     </nav>
-      <div id="main-container" class="container-fluid bg-grey">
+      <div id="main-container" class="container-fluid">
         <div class="row">
             <%= yield %>
         </div>
       </div>
-    </div>
     <footer class="container-fluid text-center bg-grey">
       created with love by team bEAST coast
     </footer>
+    </div>
 </body>
 </html>

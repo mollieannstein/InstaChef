@@ -1,6 +1,5 @@
-<div class="container">
+<div class="bg-grey container">
 <p id="recipe-id"><%= recipe.id %></p>
-
 <!-- header -->
   <div class="row">
     <div class="page-header">
@@ -17,7 +16,7 @@
       </div>
       <div id="ingredients-div">
 
-        <%= render partial: "ingredients", locals: { recipe: recipe, servings: @servings_multiplier } %>
+        <%= render partial: "ingredients", locals: { recipe: recipe, servings: @servings_multiplier }, layout: false %>
 
       </div>
     </div>
@@ -46,4 +45,6 @@
       </div>
     </div>
   </div>
+</div>
+</div>
 </div>
