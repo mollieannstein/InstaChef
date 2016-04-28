@@ -37,10 +37,8 @@ $(document).ready(function(){
       data: $data,
       url: path
     }).done(function(response){
-      $('#ingredients-div').fadeOut('slow', function(){
         $('#ingredients-div').empty();
-        $('#ingredients-div').append(response).fadeIn('slow');
-      });
+        $('#ingredients-div').append(response);
     });
   });
 
