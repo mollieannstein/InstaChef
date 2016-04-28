@@ -1,15 +1,21 @@
 class DashboardController < ApplicationController
 
-  def temp
-  end
-
-  def conversion
+  def weight
     if request.xhr?
-      render partial: "converter", layout: false
+      render partial: "weightconverter", layout: false
     else
       render :index
     end
   end
+
+  def fluid
+    if request.xhr?
+      render partial: "fluidconverter", layout: false
+    else
+      render :index
+    end
+  end
+
 
   def index
     @procedures = Procedure.all.sort_count_frequency

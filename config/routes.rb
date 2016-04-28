@@ -5,8 +5,8 @@ Rails.application.routes.draw do
   resources :recipes, only: [:show, :index]
   resources :procedures, only: [:show, :index]
 
-  get '/temperatures' => 'dashboard#temp'
-  get '/conversions' => 'dashboard#conversion'
+  get '/weight' => 'dashboard#weight'
+  get '/fluid' => 'dashboard#fluid'
   get '/allrecipes' => 'recipes#allrecipes'
 
   root "dashboard#index"

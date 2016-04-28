@@ -37,8 +37,10 @@ $(document).ready(function(){
       data: $data,
       url: path
     }).done(function(response){
-      $('#ingredients-div').empty();
-      $('#ingredients-div').append(response);
+      $('.recipe-div').fadeOut('slow', function(){
+        $('.recipe-div').empty();
+        $('.recipe-div').append(response).fadeIn('slow');
+      });
     });
   });
 
@@ -128,19 +130,42 @@ $(document).ready(function(){
   //slide toggle fluid_converter from menu bar
   $('#myNavbar').on('click', 'ul li ul #fluid', function(event){
     event.preventDefault();
-    $('.fluid-converter').slideToggle("slow");
+    $('.converter').empty();
+
+    $.ajax({
+      type: 'GET',
+      url: '/fluid'
+
+    }).done(function(response){
+      $('.converter').slideUp('slow', function(){
+        $('.converter').empty();
+        $('.converter').append(response).slideDown('slow');
+      });
+    });
   });
+
 
   // slide toggle weight_converter from menu bar
   $('#myNavbar').on('click', 'ul li ul #weight', function(event){
     event.preventDefault();
-    $('.weight-converter').slideToggle("slow");
+    $('.converter').empty();
+
+    $.ajax({
+      type: 'GET',
+      url: '/weight'
+
+    }).done(function(response){
+      $('.converter').slideUp('slow', function(){
+        $('.converter').empty();
+        $('.converter').append(response).slideDown('slow');
+      });
+    });
   });
 
   //slide toggle temperatures from menu bar
   $('#myNavbar').on('click', '.temperatures', function(event){
     event.preventDefault();
-    $('.weight-conversions').slideToggle("slow");
+    $('.meat-conversions').slideToggle("slow");
   });
 
   //ajax new recipe list
