@@ -25,8 +25,8 @@
       <ul class="nav navbar-nav navbar-right">
         <li class='conversions dropdown'><a href="#" class="dropdown-toggle" data-toggle="dropdown">CONVERSIONS<b class="caret"></b></a>
           <ul class="dropdown-menu">
-            <li id="fluid"><a href=''>Fluid Converter</a></li>
-            <li id="weight"><a href=''>Weight Converter</a></li>
+            <li id="fluid"><a href='/fluid'>Fluid Converter</a></li>
+            <li id="weight"><a href='/weight'>Weight Converter</a></li>
           </ul>
         </li>
         <li class='temperatures'><a href="/temperatures">MEAT TEMPERATURES</a></li>
@@ -38,17 +38,11 @@
   </div>
 </nav>
 
-<div class="fluid-converter bg-grey">
-  <%= render partial: "dashboard/fluidconverter", layout: false %>
-</div>
+<div class="conversions container-fluid bg-grey"></div>
 
-<!-- Weight converter mess -->
-<div class="weight-converter bg-grey">
-  <%= render partial: "dashboard/weight_converter", layout: false %>
-</div>
+<div class="converter"></div>
 
-
-<div class="meat-conversions">
+<div class="meat-conversions container-fluid">
   <%= render partial: 'dashboard/meatconversions', layout: false %>
 </div>
 

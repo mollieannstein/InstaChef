@@ -20,21 +20,23 @@
 //= require underscore
 //= require_tree .
 
+
+
+
+
 $(document).ready(function(){
   // look for dom element to listen to
 
   // servings converter
-  $('body').on('change', '#ingredients-div',function(e){
+  $('#ingredients-div').on('change', function(e){
     e.preventDefault();
-    recipeId = $('#recipe-id').text();
-    var path = "/recipes/" + recipeId;
+    var path = window.location.pathname;
     var $data = { servings_multiplier: $('#converter option:selected').text() };
     $.ajax({
       type: 'GET',
       data: $data,
       url: path
     }).done(function(response){
-      console.log(response)
       $('#ingredients-div').empty();
       $('#ingredients-div').append(response);
     });
@@ -45,6 +47,7 @@ $(document).ready(function(){
   $('.main-searchbar').on('click', '.drop-down .search_output a', function(event){
     event.preventDefault();
 
+    $('.recipe-div').fadeOut('slow');
     $('.recipe-div').empty();
     $('.drop-down').hide();
     var route = $(this).attr('href');
@@ -54,8 +57,7 @@ $(document).ready(function(){
       url: route
 
     }).done(function(response){
-      console.log(response);
-      $('.recipe-div').append(response);
+      $('.recipe-div').append(response).fadeIn('slow');
     });
   });
 
@@ -63,14 +65,19 @@ $(document).ready(function(){
   $('#myNavbar').on('click', '.terms', function(event){
     event.preventDefault();
 
-    $('.recipe-div').empty();
+    $('.recipe-div').fadeOut('slow', function(){
+      $('.recipe-div').empty();
+    });
 
     $.ajax({
       type: 'GET',
       url: '/procedures'
 
     }).done(function(response){
-      $('.recipe-div').append(response);
+      $('.recipe-div').fadeOut('slow', function(){
+        $('.recipe-div').empty();
+        $('.recipe-div').append(response).fadeIn('slow');
+      });
     });
   });
 
@@ -78,47 +85,77 @@ $(document).ready(function(){
   $('#myNavbar').on('click', '.all-recipes', function(event){
     event.preventDefault();
 
-    $('.recipe-div').empty();
-
     $.ajax({
       type: 'GET',
       url: '/allrecipes'
 
     }).done(function(response){
-      $('.recipe-div').append(response);
+      $('.recipe-div').fadeOut('slow', function(){
+        $('.recipe-div').empty();
+        $('.recipe-div').append(response).fadeIn('slow');
+      });
     });
   });
 
   //append specific recipe to recipe div
   $('.recipe-div').on('click', 'a.recipe-link', function(event){
     event.preventDefault();
+
     var url = $(this).attr('href');
-    $('.recipe-div').empty();
 
     $.ajax({
       type: 'GET',
       url: url
 
     }).done(function(response){
-      $('.recipe-div').append(response);
+      $('.recipe-div').fadeOut('slow', function(){
+        $('.recipe-div').empty();
+        $('.recipe-div').append(response).fadeIn('slow');
+      });
     });
   });
 
   //empty main div on logo click
   $('.navbar-header a').on('click', function(event){
-    $('.recipe-div').empty();
+    event.preventDefault();
+    $('.recipe-div').fadeOut('slow');
+    $('.converter').slideUp('slow');
+    // $('.recipe-div').empty();
   });
 
   //slide toggle fluid_converter from menu bar
   $('#myNavbar').on('click', 'ul li ul #fluid', function(event){
     event.preventDefault();
-    $('.fluid-converter').slideToggle("slow");
+    $('.converter').empty();
+
+    $.ajax({
+      type: 'GET',
+      url: '/fluid'
+
+    }).done(function(response){
+      $('.converter').slideUp('slow', function(){
+        $('.converter').empty();
+        $('.converter').append(response).slideDown('slow');
+      });
+    });
   });
+
 
   // slide toggle weight_converter from menu bar
   $('#myNavbar').on('click', 'ul li ul #weight', function(event){
     event.preventDefault();
-    $('.weight-converter').slideToggle("slow");
+    $('.converter').empty();
+
+    $.ajax({
+      type: 'GET',
+      url: '/weight'
+
+    }).done(function(response){
+      $('.converter').slideUp('slow', function(){
+        $('.converter').empty();
+        $('.converter').append(response).slideDown('slow');
+      });
+    });
   });
 
   //slide toggle temperatures from menu bar
@@ -137,8 +174,10 @@ $(document).ready(function(){
       url: url
 
     }).done(function(response){
-      $('.recipe-div').empty();
-      $('.recipe-div').append(response);
+      $('.recipe-div').fadeOut('slow', function(){
+        $('.recipe-div').empty();
+        $('.recipe-div').append(response).fadeIn('slow');
+      });
     });
   });
 
