@@ -7995,7 +7995,7 @@ button.close {
 @import url(https://fonts.googleapis.com/css?family=Oxygen|Lobster|Maven+Pro|Questrial|Poppins|Didact+Gothic|Marmelad|Overlock|Lily+Script+One);
 
 .background {
-  background-image: url("board.png");
+  background-image: url("/assets/board-d25ed787201f724f873951349f4736adbeba7feccb4de17bcaadcd479af75e35.png");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center top;
@@ -8397,9 +8397,9 @@ body::after, body::before {
 */
 @font-face {
     font-family: 'WebHostingHub-Glyphs';
-    src: url('../font/webhostinghub-glyphs.eot');
-    src: url('../font/webhostinghub-glyphs.eot?#iefix') format('embedded-opentype'),
-         url('../font/webhostinghub-glyphs.ttf') format('truetype');
+    src: url("/assets/whhg-font/font/webhostinghub-glyphs-a833e5d9e81fce88aaa7f4d2e26d2a1a380e12cb913eb8597de9459349162df4.eot");
+    src: url("/assets/whhg-font/font/webhostinghub-glyphs-a833e5d9e81fce88aaa7f4d2e26d2a1a380e12cb913eb8597de9459349162df4.eot?#iefix") format('embedded-opentype'),
+         url("/assets/whhg-font/font/webhostinghub-glyphs-51454b7b9f3c133f40e2c319be101e6082c73aff7f80259d490cc4f4a5bcb57a.ttf") format('truetype');
     font-weight: normal;
     font-style: normal;
     -moz-font-feature-settings: "calt=0,liga=0";
