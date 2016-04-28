@@ -11,8 +11,6 @@ var throttledSearch = _.throttle(recipeSearch, 300);
 
 $(document).ready(function() {
 
-  $('input').focus();
-
     $(".form-control").keyup(function(event){
         $(".drop-down").remove();
         event.preventDefault();
