@@ -3,9 +3,9 @@
 .background {
   background-image: url("board.jpg");
   background-repeat: no-repeat;
-  background-position: top center;
+  background-position: center top;
+  background-size: 250%;
   opacity: .7;
-  margin-bottom: 0;
 }
 
 body {
@@ -42,7 +42,8 @@ h4 {
 
 .container {
   margin-bottom: 0;
-  padding: 0px 50px;
+  padding-bottom: 20px;
+  padding: 0px 50px 30px 50px;
 }
 
 .bg-grey {
@@ -290,7 +291,7 @@ iframe {
 
 .meat-conversions {
   display: none;
-  margin: auto;
+  margin-top: 2em;
   background-color: rgba(1, 187, 204, .4);
 }
 
@@ -299,7 +300,7 @@ iframe {
 }
 
 table > thead > tr > th {
-  width: 190px;
+  max-width: 190px;
   text-align: left;
   font-weight: bolder;
 }
@@ -318,7 +319,7 @@ table > tbody > tr {
 
 table {
   background-color: #efefef;
-  width: 500px;
+  max-width: 500px;
   height: 200px;
   border-radius: 20px;
 }
