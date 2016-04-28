@@ -5,5 +5,7 @@
 <% end %></h6>
 <h6>Prep Time: <%= recipe.prep_time %></h6>
 <% recipe.ingredients.each do |i| %>
+
   <li><%= recipe_converter(highlight_ingredients(i.item, recipe.recipe_procedures),servings).html_safe %></li>
+
 <% end %>
