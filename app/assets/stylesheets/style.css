@@ -27,6 +27,14 @@ h2 {
     font-weight: 600;
     margin-bottom: 30px;
 }
+
+h3 {
+  font-family: 'Lily Script One', sans-serif;
+  letter-spacing: 1px;
+  color: #818181;
+  text-decoration: underline;
+}
+
 h4 {
     font-size: 10px;
     line-height: 1.375em;
@@ -103,11 +111,11 @@ h4 {
 
 .hovered-term {
   padding: 10px;
-  width: 80%;
+  width: 96%;
   box-shadow: 0px 0px 10px #01BBCC;
-  border-radius: 25px;
+  border-radius: 20px;
   margin: 7px;
-  background-color: #01BBCC;
+  background-color: rgba(1, 187, 204, .4);;
 }
 
 
@@ -295,8 +303,10 @@ iframe {
   background-color: rgba(1, 187, 204, .4);
 }
 
-.conversions {
-  display: none;
+.converter {
+  background-color: rgba(1, 187, 204, .4);
+  padding: 20px;
+  margin-top: 4em;
 }
 
 table > thead > tr > th {
@@ -341,6 +351,9 @@ table {
 
 label {
   font-size: 16px;
+  font-family: 'Oxygen', sans-serif;
+  letter-spacing: 1px;
+  color: #818181;;
 }
 
 input#gfc-quantity, input#gfc-result, input#gfc-ounces, input#gfc-grams {
