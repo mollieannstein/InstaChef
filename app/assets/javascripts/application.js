@@ -37,10 +37,8 @@ $(document).ready(function(){
       data: $data,
       url: path
     }).done(function(response){
-      $('.recipe-div').fadeOut('slow', function(){
-        $('.recipe-div').empty();
-        $('.recipe-div').append(response).fadeIn('slow');
-      });
+      $('#ingredients-div').empty();
+      $('#ingredients-div').append(response);
     });
   });
 
@@ -59,7 +57,6 @@ $(document).ready(function(){
       url: route
 
     }).done(function(response){
-      console.log(response);
       $('.recipe-div').append(response).fadeIn('slow');
     });
   });
@@ -105,8 +102,6 @@ $(document).ready(function(){
     event.preventDefault();
 
     var url = $(this).attr('href');
-    $('.recipe-div').fadeOut('slow');
-    $('.recipe-div').empty();
 
     $.ajax({
       type: 'GET',
@@ -124,6 +119,7 @@ $(document).ready(function(){
   $('.navbar-header a').on('click', function(event){
     event.preventDefault();
     $('.recipe-div').fadeOut('slow');
+    $('.converter').slideUp('slow');
     // $('.recipe-div').empty();
   });
 
