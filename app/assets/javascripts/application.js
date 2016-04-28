@@ -20,6 +20,10 @@
 //= require underscore
 //= require_tree .
 
+
+
+
+
 $(document).ready(function(){
   // look for dom element to listen to
 
@@ -45,6 +49,7 @@ $(document).ready(function(){
   $('.main-searchbar').on('click', '.drop-down .search_output a', function(event){
     event.preventDefault();
 
+    $('.recipe-div').fadeOut('slow');
     $('.recipe-div').empty();
     $('.drop-down').hide();
     var route = $(this).attr('href');
@@ -55,7 +60,7 @@ $(document).ready(function(){
 
     }).done(function(response){
       console.log(response);
-      $('.recipe-div').append(response);
+      $('.recipe-div').append(response).fadeIn('slow');
     });
   });
 
@@ -63,6 +68,7 @@ $(document).ready(function(){
   $('#myNavbar').on('click', '.terms', function(event){
     event.preventDefault();
 
+    $('.recipe-div').fadeOut('slow');
     $('.recipe-div').empty();
 
     $.ajax({
@@ -70,7 +76,7 @@ $(document).ready(function(){
       url: '/procedures'
 
     }).done(function(response){
-      $('.recipe-div').append(response);
+      $('.recipe-div').append(response).fadeIn('slow');
     });
   });
 
@@ -78,6 +84,7 @@ $(document).ready(function(){
   $('#myNavbar').on('click', '.all-recipes', function(event){
     event.preventDefault();
 
+    $('.recipe-div').fadeOut('slow');
     $('.recipe-div').empty();
 
     $.ajax({
@@ -85,7 +92,7 @@ $(document).ready(function(){
       url: '/allrecipes'
 
     }).done(function(response){
-      $('.recipe-div').append(response);
+      $('.recipe-div').append(response).fadeIn('slow');
     });
   });
 
@@ -93,6 +100,7 @@ $(document).ready(function(){
   $('.recipe-div').on('click', 'a.recipe-link', function(event){
     event.preventDefault();
     var url = $(this).attr('href');
+    $('.recipe-div').fadeOut('slow');
     $('.recipe-div').empty();
 
     $.ajax({
@@ -100,13 +108,14 @@ $(document).ready(function(){
       url: url
 
     }).done(function(response){
-      $('.recipe-div').append(response);
+      $('.recipe-div').append(response).fadeIn('slow');
     });
   });
 
   //empty main div on logo click
   $('.navbar-header a').on('click', function(event){
-    $('.recipe-div').empty();
+    $('.recipe-div').fadeOut('slow');
+    // $('.recipe-div').empty();
   });
 
   //slide toggle fluid_converter from menu bar
@@ -137,8 +146,9 @@ $(document).ready(function(){
       url: url
 
     }).done(function(response){
+      $('.recipe-div').fadeOut('slow');
       $('.recipe-div').empty();
-      $('.recipe-div').append(response);
+      $('.recipe-div').append(response).fadeIn('slow');
     });
   });
 
