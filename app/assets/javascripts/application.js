@@ -20,6 +20,10 @@
 //= require underscore
 //= require_tree .
 
+
+
+
+
 $(document).ready(function(){
   // look for dom element to listen to
 
@@ -43,6 +47,7 @@ $(document).ready(function(){
   $('.main-searchbar').on('click', '.drop-down .search_output a', function(event){
     event.preventDefault();
 
+    $('.recipe-div').fadeOut('slow');
     $('.recipe-div').empty();
     $('.drop-down').hide();
     var route = $(this).attr('href');
@@ -53,7 +58,7 @@ $(document).ready(function(){
 
     }).done(function(response){
       console.log(response);
-      $('.recipe-div').append(response);
+      $('.recipe-div').append(response).fadeIn('slow');
     });
   });
 
@@ -61,14 +66,19 @@ $(document).ready(function(){
   $('#myNavbar').on('click', '.terms', function(event){
     event.preventDefault();
 
-    $('.recipe-div').empty();
+    $('.recipe-div').fadeOut('slow', function(){
+      $('.recipe-div').empty();
+    });
 
     $.ajax({
       type: 'GET',
       url: '/procedures'
 
     }).done(function(response){
-      $('.recipe-div').append(response);
+      $('.recipe-div').fadeOut('slow', function(){
+        $('.recipe-div').empty();
+        $('.recipe-div').append(response).fadeIn('slow');
+      });
     });
   });
 
@@ -76,14 +86,15 @@ $(document).ready(function(){
   $('#myNavbar').on('click', '.all-recipes', function(event){
     event.preventDefault();
 
-    $('.recipe-div').empty();
-
     $.ajax({
       type: 'GET',
       url: '/allrecipes'
 
     }).done(function(response){
-      $('.recipe-div').append(response);
+      $('.recipe-div').fadeOut('slow', function(){
+        $('.recipe-div').empty();
+        $('.recipe-div').append(response).fadeIn('slow');
+      });
     });
   });
 
@@ -92,6 +103,7 @@ $(document).ready(function(){
     event.preventDefault();
 
     var url = $(this).attr('href');
+    $('.recipe-div').fadeOut('slow');
     $('.recipe-div').empty();
 
     $.ajax({
@@ -99,13 +111,18 @@ $(document).ready(function(){
       url: url
 
     }).done(function(response){
-      $('.recipe-div').append(response);
+      $('.recipe-div').fadeOut('slow', function(){
+        $('.recipe-div').empty();
+        $('.recipe-div').append(response).fadeIn('slow');
+      });
     });
   });
 
   //empty main div on logo click
   $('.navbar-header a').on('click', function(event){
-    $('.recipe-div').empty();
+    event.preventDefault();
+    $('.recipe-div').fadeOut('slow');
+    // $('.recipe-div').empty();
   });
 
   //slide toggle fluid_converter from menu bar
@@ -123,7 +140,7 @@ $(document).ready(function(){
   //slide toggle temperatures from menu bar
   $('#myNavbar').on('click', '.temperatures', function(event){
     event.preventDefault();
-    $('.meat-conversions').slideToggle("slow");
+    $('.weight-conversions').slideToggle("slow");
   });
 
   //ajax new recipe list
@@ -136,8 +153,10 @@ $(document).ready(function(){
       url: url
 
     }).done(function(response){
-      $('.recipe-div').empty();
-      $('.recipe-div').append(response);
+      $('.recipe-div').fadeOut('slow', function(){
+        $('.recipe-div').empty();
+        $('.recipe-div').append(response).fadeIn('slow');
+      });
     });
   });
 
