@@ -127,7 +127,8 @@ $(document).ready(function(){
   //slide toggle fluid_converter from menu bar
   $('#myNavbar').on('click', 'ul li ul #fluid', function(event){
     event.preventDefault();
-    $('.converter').empty();
+    // $('.converter').empty();
+    $('.converter .col-sm-offset-4 .weights').slideUp('slow');
 
     $.ajax({
       type: 'GET',
@@ -145,7 +146,8 @@ $(document).ready(function(){
   // slide toggle weight_converter from menu bar
   $('#myNavbar').on('click', 'ul li ul #weight', function(event){
     event.preventDefault();
-    $('.converter').empty();
+    // $('.converter').empty();
+    $('.converter .col-sm-offset-7 .fluids').slideUp('slow');
 
     $.ajax({
       type: 'GET',
