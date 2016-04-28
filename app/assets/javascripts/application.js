@@ -77,6 +77,8 @@ $(document).ready(function(){
       $('.recipe-div').fadeOut('slow', function(){
         $('.recipe-div').empty();
         $('.recipe-div').append(response).fadeIn('slow');
+        var toOffset = $('.main-container').offset();
+        window.scrollTo(0, 450);
       });
     });
   });
@@ -93,6 +95,7 @@ $(document).ready(function(){
       $('.recipe-div').fadeOut('slow', function(){
         $('.recipe-div').empty();
         $('.recipe-div').append(response).fadeIn('slow');
+        window.scrollTo(0, 450);
       });
     });
   });
@@ -134,7 +137,8 @@ $(document).ready(function(){
     }).done(function(response){
       $('.converter').slideUp('slow', function(){
         $('.converter').empty();
-        $('.converter').append(response).slideDown('slow');
+          window.scrollTo(0,0);
+        $('.converter').append(response).slideDown('slow')
       });
     });
   });
@@ -152,20 +156,24 @@ $(document).ready(function(){
     }).done(function(response){
       $('.converter').slideUp('slow', function(){
         $('.converter').empty();
-        $('.converter').append(response).slideDown('slow');
+        window.scrollTo(0,0);
+        $('.converter').append(response).slideDown('slow')
+
       });
     });
   });
 
   //conversions button closes either pull down menu
   $('#myNavbar').on('click', '.conversions', function(){
+    window.scrollTo(0,0);
     $('.converter .col-sm-offset-5 .weights').slideUp('slow');
-    $('.converter .col-sm-offset-5 .fluids').slideUp('slow');
+    $('.converter .col-sm-offset-5 .fluids').slideUp('slow')
   })
 
   //slide toggle temperatures from menu bar
   $('#myNavbar').on('click', '.temperatures', function(event){
     event.preventDefault();
+    window.scrollTo(0,0);
     $('.meat-conversions').slideToggle("slow");
   });
 
