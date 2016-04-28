@@ -1,11 +1,12 @@
 @import url(https://fonts.googleapis.com/css?family=Oxygen|Lobster|Maven+Pro|Questrial|Poppins|Didact+Gothic|Marmelad|Overlock|Lily+Script+One);
 
 .background {
-  background-image: url("board.jpg");
+  background-image: url("board.png");
   background-repeat: no-repeat;
+  background-attachment: fixed;
   background-position: center top;
-  background-size: 250%;
-  opacity: .7;
+  background-size: 100%;
+  opacity: .9;
 }
 
 body {
@@ -55,8 +56,8 @@ h4 {
 }
 
 .bg-grey {
-    background-color: #f6f6f6;
-    opacity: .9;
+    background-color: #efefef;
+    opacity: 1.0;
     border-radius: 20px;
     margin: 40px;
 }
@@ -177,10 +178,6 @@ li.search-output > a {
 
 .icon-chef {
   font-size: 50px;
-}
-
-.main-searchbar {
-  padding: 30px;
 }
 
 .form-inline {
@@ -312,11 +309,9 @@ iframe {
 
 .meat-conversions {
   display: none;
-  background-color: rgba(1, 187, 204, .4);
 }
 
 .converter {
-  background-color: rgba(1, 187, 204, .4);
   padding: 20px;
   margin-top: 4em;
 }
