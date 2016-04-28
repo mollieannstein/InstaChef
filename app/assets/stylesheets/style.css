@@ -336,6 +336,10 @@ input#gfc-quantity, input#gfc-result, input#gfc-ounces, input#gfc-grams {
   font-family: 'Lily Script One', sans-serif;
 }
 
+#recipe-id {
+  display: none;
+}
+
 
 /*
 body::after, body::before {
