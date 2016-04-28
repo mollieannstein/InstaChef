@@ -134,7 +134,7 @@ $(document).ready(function(){
     }).done(function(response){
       $('.converter').slideUp('slow', function(){
         $('.converter').empty();
-        $('.converter').append(response).slideDown('slow');
+        $('.converter').append(response).slideDown('slow').scrollTop();
       });
     });
   });
@@ -152,7 +152,7 @@ $(document).ready(function(){
     }).done(function(response){
       $('.converter').slideUp('slow', function(){
         $('.converter').empty();
-        $('.converter').append(response).slideDown('slow');
+        $('.converter').append(response).slideDown('slow').scrollTop();
       });
     });
   });
@@ -160,13 +160,13 @@ $(document).ready(function(){
   //conversions button closes either pull down menu
   $('#myNavbar').on('click', '.conversions', function(){
     $('.converter .col-sm-offset-5 .weights').slideUp('slow');
-    $('.converter .col-sm-offset-5 .fluids').slideUp('slow');
+    $('.converter .col-sm-offset-5 .fluids').slideUp('slow').scrollTop();
   })
 
   //slide toggle temperatures from menu bar
   $('#myNavbar').on('click', '.temperatures', function(event){
     event.preventDefault();
-    $('.meat-conversions').slideToggle("slow");
+    $('.meat-conversions').slideToggle("slow").scrollTop();
   });
 
   //ajax new recipe list
