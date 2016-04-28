@@ -28,7 +28,9 @@ class RecipesController < ApplicationController
   def show
     @recipe = Recipe.find(params[:id])
     servings_change = false
+    puts params.to_s + " %$%$%%$%$%$%$%$"
     if params[:servings_multiplier]
+      puts '******* mult **********'
       @servings_multiplier = (params[:servings_multiplier].to_r / @recipe.servings.to_r).to_f
       servings_change = true
     else
