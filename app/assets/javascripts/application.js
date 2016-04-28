@@ -114,6 +114,7 @@ $(document).ready(function(){
 
   //empty main div on logo click
   $('.navbar-header a').on('click', function(event){
+    event.preventDefault();
     $('.recipe-div').fadeOut('slow');
     // $('.recipe-div').empty();
   });
@@ -133,7 +134,7 @@ $(document).ready(function(){
   //slide toggle temperatures from menu bar
   $('#myNavbar').on('click', '.temperatures', function(event){
     event.preventDefault();
-    $('.meat-conversions').slideToggle("slow");
+    $('.weight-conversions').slideToggle("slow");
   });
 
   //ajax new recipe list
