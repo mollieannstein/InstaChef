@@ -9,7 +9,7 @@
   <%= csrf_meta_tags %>
 </head>
 
-<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+<body id="myPage" class="background" data-spy="scroll" data-target=".navbar" data-offset="60">
 <nav class="navbar navbar-default navbar-fixed-top">
   <div class="container">
    <div class="navbar-header">
@@ -38,15 +38,15 @@
   </div>
 </nav>
 
-<div class="converter"></div>
+<div class="converter bg-grey"></div>
 
-<div class="meat-conversions container-fluid">
+<div class="meat-conversions bg-grey container-fluid">
   <%= render partial: 'dashboard/meatconversions', layout: false %>
 </div>
 
 
 
-<div class="container-fluid background">
+<div class="container-fluid">
   <div class="row">
     <div class="col-sm-12">
     <div class="container-fluid bg-grey catch-phrase">
