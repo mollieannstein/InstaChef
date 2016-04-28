@@ -368,6 +368,10 @@ input#gfc-quantity, input#gfc-result, input#gfc-ounces, input#gfc-grams {
   margin: 10px;
 }
 
+.center {
+  text-align: center;
+}
+
 .weight-converter {
   display: none;
   position: inherit;
@@ -377,6 +381,7 @@ input#gfc-quantity, input#gfc-result, input#gfc-ounces, input#gfc-grams {
   font-size: 20px;
   letter-spacing: 1px;
   font-family: 'Oxygen', sans-serif;
+
 }
 
 .table-title {
