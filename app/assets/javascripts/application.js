@@ -68,15 +68,19 @@ $(document).ready(function(){
   $('#myNavbar').on('click', '.terms', function(event){
     event.preventDefault();
 
-    $('.recipe-div').fadeOut('slow');
-    $('.recipe-div').empty();
+    $('.recipe-div').fadeOut('slow', function(){
+      $('.recipe-div').empty();
+    });
 
     $.ajax({
       type: 'GET',
       url: '/procedures'
 
     }).done(function(response){
-      $('.recipe-div').append(response).fadeIn('slow');
+      $('.recipe-div').fadeOut('slow', function(){
+        $('.recipe-div').empty();
+        $('.recipe-div').append(response).fadeIn('slow');
+      });
     });
   });
 
@@ -84,15 +88,15 @@ $(document).ready(function(){
   $('#myNavbar').on('click', '.all-recipes', function(event){
     event.preventDefault();
 
-    $('.recipe-div').fadeOut('slow');
-    $('.recipe-div').empty();
-
     $.ajax({
       type: 'GET',
       url: '/allrecipes'
 
     }).done(function(response){
-      $('.recipe-div').append(response).fadeIn('slow');
+      $('.recipe-div').fadeOut('slow', function(){
+        $('.recipe-div').empty();
+        $('.recipe-div').append(response).fadeIn('slow');
+      });
     });
   });
 
@@ -108,7 +112,10 @@ $(document).ready(function(){
       url: url
 
     }).done(function(response){
-      $('.recipe-div').append(response).fadeIn('slow');
+      $('.recipe-div').fadeOut('slow', function(){
+        $('.recipe-div').empty();
+        $('.recipe-div').append(response).fadeIn('slow');
+      });
     });
   });
 
@@ -147,9 +154,10 @@ $(document).ready(function(){
       url: url
 
     }).done(function(response){
-      $('.recipe-div').fadeOut('slow');
-      $('.recipe-div').empty();
-      $('.recipe-div').append(response).fadeIn('slow');
+      $('.recipe-div').fadeOut('slow', function(){
+        $('.recipe-div').empty();
+        $('.recipe-div').append(response).fadeIn('slow');
+      });
     });
   });
 
