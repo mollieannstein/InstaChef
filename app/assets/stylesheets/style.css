@@ -274,8 +274,12 @@ iframe {
 
 .meat-conversions {
   display: none;
-  margin: 3em auto;
+  margin: auto;
   background-color: rgba(1, 187, 204, .4);
+}
+
+.conversions {
+  display: none;
 }
 
 table > thead > tr > th {
@@ -305,21 +309,12 @@ table {
 
 .fluid-converter {
   display: none;
-  position: inherit;
 }
 
-.fluids {
-  margin: 40px auto;
-  padding: 60px;
+.fluids, .weights {
+  margin-top: 60px;
   position: inline-block;
 }
-
-.weights {
-  position: inline-block;
-  padding: 60px;
-  margin: 40px auto;
-}
-
 
 #convert {
   border-radius: 10px;
