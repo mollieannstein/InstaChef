@@ -268,8 +268,6 @@ iframe {
   background-color: rgba(1, 187, 204, .4);
 }
 
-
-
 table > thead > tr > th {
   width: 190px;
   text-align: left;
@@ -295,10 +293,29 @@ table {
   border-radius: 20px;
 }
 
-
 .fluid-converter {
   display: none;
   position: inherit;
+}
+
+.fluids, .weights {
+  margin: 60px auto;
+  padding: 100px;
+}
+
+#convert {
+  border-radius: 10px;
+  background-color: #01BBCC;
+  color: white;
+}
+
+label {
+  font-size: 16px;
+}
+
+input#gfc-quantity, input#gfc-result, input#gfc-ounces, input#gfc-grams {
+  border-radius: 10px;
+  margin: 10px;
 }
 
 .weight-converter {
@@ -318,6 +335,10 @@ table {
   font-weight: bolder;
   text-align: center;
   font-family: 'Lily Script One', sans-serif;
+}
+
+#recipe-id {
+  display: none;
 }
 
 

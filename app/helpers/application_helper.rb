@@ -1,13 +1,13 @@
 module ApplicationHelper
   def selected_servings_option(servings)
     if servings == 0.5
-      return "<option selected>#{@recipe.servings*0.5}</option><option>#{@recipe.servings}</option><option>#{@recipe.servings*2}</option><option>#{@recipe.servings*4}</option>"
+      return "<option selected class='servings-option'>#{@recipe.servings*0.5}</option><option class='servings-option'>#{@recipe.servings}</option><option class='servings-option'>#{@recipe.servings*2}</option><option class='servings-option'>#{@recipe.servings*4}</option>"
     elsif servings == 1.0
-      return "<option>#{@recipe.servings*0.5}</option><option selected>#{@recipe.servings}</option><option>#{@recipe.servings*2}</option><option>#{@recipe.servings*4}</option>"
+      return "<option class='servings-option'>#{@recipe.servings*0.5}</option><option class='servings-option' selected>#{@recipe.servings}</option><option class='servings-option'>#{@recipe.servings*2}</option><option class='servings-option'>#{@recipe.servings*4}</option>"
     elsif servings == 2.0
-      return "<option>#{@recipe.servings*0.5}</option><option>#{@recipe.servings}</option><option selected>#{@recipe.servings*2}</option><option>#{@recipe.servings*4}</option>"
+      return "<option class='servings-option'>#{@recipe.servings*0.5}</option><option class='servings-option'>#{@recipe.servings}</option><option class='servings-option' selected>#{@recipe.servings*2}</option><option class='servings-option'>#{@recipe.servings*4}</option>"
     elsif servings == 4.0
-      return "<option>#{@recipe.servings*0.5}</option><option>#{@recipe.servings}</option><option>#{@recipe.servings*2}</option><option selected>#{@recipe.servings*4}</option>"
+      return "<option class='servings-option'>#{@recipe.servings*0.5}</option><option class='servings-option'>#{@recipe.servings}</option><option class='servings-option'>#{@recipe.servings*2}</option><option class='servings-option' selected>#{@recipe.servings*4}</option>"
     else
     end
   end

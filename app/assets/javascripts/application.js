@@ -24,15 +24,17 @@ $(document).ready(function(){
   // look for dom element to listen to
 
   // servings converter
-  $('#ingredients-div').on('change', function(e){
+  $('body').on('change', '#ingredients-div',function(e){
     e.preventDefault();
-    var path = window.location.pathname;
+    recipeId = $('#recipe-id').text();
+    var path = "/recipes/" + recipeId;
     var $data = { servings_multiplier: $('#converter option:selected').text() };
     $.ajax({
       type: 'GET',
       data: $data,
       url: path
     }).done(function(response){
+      console.log(response)
       $('#ingredients-div').empty();
       $('#ingredients-div').append(response);
     });
@@ -88,12 +90,10 @@ $(document).ready(function(){
   });
 
   //append specific recipe to recipe div
-  $(document).on('click', 'a.recipe-link', function(event){
+  $('.recipe-div').on('click', 'a.recipe-link', function(event){
     event.preventDefault();
-
     var url = $(this).attr('href');
     $('.recipe-div').empty();
-
 
     $.ajax({
       type: 'GET',

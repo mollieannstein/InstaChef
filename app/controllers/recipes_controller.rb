@@ -34,13 +34,16 @@ class RecipesController < ApplicationController
     else
       @servings_multiplier = 1
     end
+
     if request.xhr?
       if servings_change
         render partial: "ingredients", layout: false, locals: { recipe: @recipe, procedure: @recipe.procedures, servings: @servings_multiplier }
       else
+        puts 'hello there ***************'
         render partial: "show", layout: false, locals: { recipe: @recipe, procedure: @recipe.procedures, servings: @servings_multiplier }
       end
     else
+      puts 'i am rendering :show'
       render :show
     end
   end
