@@ -9,7 +9,7 @@ function recipeSearch(input) {
 
 var throttledSearch = _.throttle(recipeSearch, 300);
 
-$( document ).ready(function() {
+$(document).ready(function() {
 
     $(".form-control").keyup(function(event){
         $(".drop-down").remove();
@@ -31,4 +31,3 @@ $( document ).ready(function() {
     });
 
 });
-

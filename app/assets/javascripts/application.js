@@ -24,9 +24,9 @@ $(document).ready(function(){
   // look for dom element to listen to
 
   // servings converter
-  $('#converter').on('change', function(e){
+  $('body').on('change', '#ingredients-div',function(e){
     e.preventDefault();
-    recipeId = $('#recipe-id').text());
+    recipeId = $('#recipe-id').text();
     var path = "/recipes/" + recipeId;
     var $data = { servings_multiplier: $('#converter option:selected').text() };
     $.ajax({
@@ -92,7 +92,6 @@ $(document).ready(function(){
   //append specific recipe to recipe div
   $('.recipe-div').on('click', 'a.recipe-link', function(event){
     event.preventDefault();
-
     var url = $(this).attr('href');
     $('.recipe-div').empty();
 

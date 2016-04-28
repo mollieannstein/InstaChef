@@ -28,21 +28,22 @@ class RecipesController < ApplicationController
   def show
     @recipe = Recipe.find(params[:id])
     servings_change = false
-    puts params.to_s + " %$%$%%$%$%$%$%$"
     if params[:servings_multiplier]
-      puts '******* mult **********'
       @servings_multiplier = (params[:servings_multiplier].to_r / @recipe.servings.to_r).to_f
       servings_change = true
     else
       @servings_multiplier = 1
     end
+
     if request.xhr?
       if servings_change
         render partial: "ingredients", layout: false, locals: { recipe: @recipe, procedure: @recipe.procedures, servings: @servings_multiplier }
       else
+        puts 'hello there ***************'
         render partial: "show", layout: false, locals: { recipe: @recipe, procedure: @recipe.procedures, servings: @servings_multiplier }
       end
     else
+      puts 'i am rendering :show'
       render :show
     end
   end
