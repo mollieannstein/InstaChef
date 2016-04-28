@@ -17,6 +17,7 @@ class RecipesController < ApplicationController
   end
 
   def allrecipes
+    p "PEW PEW PEW"
     @recipes = Recipe.all
     if request.xhr?
       render partial: "allrecipes", layout: false, locals: { recipes: @recipes }

@@ -26,17 +26,18 @@
 
 $(document).ready(function(){
   // look for dom element to listen to
-
   // servings converter
-  $('#ingredients-div').on('change', function(e){
+  $('body').on('change', '#ingredients-div',function(e){
     e.preventDefault();
-    var path = window.location.pathname;
+    recipeId = $('#recipe-id').text();
+    var path = "/recipes/" + recipeId;
     var $data = { servings_multiplier: $('#converter option:selected').text() };
     $.ajax({
       type: 'GET',
       data: $data,
       url: path
     }).done(function(response){
+      console.log(response)
       $('#ingredients-div').empty();
       $('#ingredients-div').append(response);
     });
@@ -57,7 +58,6 @@ $(document).ready(function(){
       url: route
 
     }).done(function(response){
-      console.log(response);
       $('.recipe-div').append(response).fadeIn('slow');
     });
   });
@@ -103,8 +103,6 @@ $(document).ready(function(){
     event.preventDefault();
 
     var url = $(this).attr('href');
-    $('.recipe-div').fadeOut('slow');
-    $('.recipe-div').empty();
 
     $.ajax({
       type: 'GET',
@@ -122,25 +120,49 @@ $(document).ready(function(){
   $('.navbar-header a').on('click', function(event){
     event.preventDefault();
     $('.recipe-div').fadeOut('slow');
+    $('.converter').slideUp('slow');
     // $('.recipe-div').empty();
   });
 
   //slide toggle fluid_converter from menu bar
   $('#myNavbar').on('click', 'ul li ul #fluid', function(event){
     event.preventDefault();
-    $('.fluid-converter').slideToggle("slow");
+    $('.converter').empty();
+
+    $.ajax({
+      type: 'GET',
+      url: '/fluid'
+
+    }).done(function(response){
+      $('.converter').slideUp('slow', function(){
+        $('.converter').empty();
+        $('.converter').append(response).slideDown('slow');
+      });
+    });
   });
+
 
   // slide toggle weight_converter from menu bar
   $('#myNavbar').on('click', 'ul li ul #weight', function(event){
     event.preventDefault();
-    $('.weight-converter').slideToggle("slow");
+    $('.converter').empty();
+
+    $.ajax({
+      type: 'GET',
+      url: '/weight'
+
+    }).done(function(response){
+      $('.converter').slideUp('slow', function(){
+        $('.converter').empty();
+        $('.converter').append(response).slideDown('slow');
+      });
+    });
   });
 
   //slide toggle temperatures from menu bar
   $('#myNavbar').on('click', '.temperatures', function(event){
     event.preventDefault();
-    $('.weight-conversions').slideToggle("slow");
+    $('.meat-conversions').slideToggle("slow");
   });
 
   //ajax new recipe list
