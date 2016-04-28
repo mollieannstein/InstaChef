@@ -1,12 +1,11 @@
-<div class="bg-grey container-fluid">
+<div class="bg-grey container">
 <p id="recipe-id"><%= recipe.id %></p>
-<div class="padding">
 <!-- header -->
   <div class="row">
     <div class="page-header">
       <h1><%= recipe.name %></h1>
     </div>
-      <p><img class="recipe-img" src="<%= recipe.image_url %>"><p>
+      <p><img src="<%= recipe.image_url %>"><p>
   </div>
 
   <!-- ingredients div -->
@@ -17,7 +16,7 @@
       </div>
       <div id="ingredients-div">
 
-        <%= render partial: "ingredients", locals: { recipe: recipe, servings: @servings_multiplier } %>
+        <%= render partial: "ingredients", locals: { recipe: recipe, servings: @servings_multiplier }, layout: false %>
 
       </div>
     </div>
@@ -46,5 +45,6 @@
       </div>
     </div>
   </div>
+</div>
 </div>
 </div>

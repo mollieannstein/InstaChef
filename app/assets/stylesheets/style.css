@@ -3,8 +3,9 @@
 .background {
   background-image: url("board.jpg");
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: top center;
   opacity: .7;
+  margin-bottom: 0;
 }
 
 body {
@@ -39,11 +40,16 @@ h4 {
     border-radius: 10px;
 }
 
+.container {
+  margin-bottom: 0;
+  padding: 0px 50px;
+}
+
 .bg-grey {
     background-color: #f6f6f6;
-    opacity: .8;
+    opacity: .9;
     border-radius: 20px;
-    padding: 40px;
+    margin: 40px;
 }
 
 .recipe-procedure {
@@ -240,7 +246,7 @@ mark {
 }
 
 .scrollable {
-  max-height: 750px;
+  max-height: 500px;
   overflow-y: scroll;
   float: right;
 }
