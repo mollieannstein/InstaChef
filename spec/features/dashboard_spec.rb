@@ -14,9 +14,5 @@ RSpec.feature "Dashboard", type: :feature do
     expect(page).to have_content(/...because/i)
   end
 
-  scenario "as a visitor, I should be able to visit the all recipes page" do
-    click_link ("ALL RECIPES")
-    expect(page).to have_content "Appetizers"
-  end
 
 end
