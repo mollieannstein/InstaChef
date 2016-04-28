@@ -37,9 +37,10 @@ $(document).ready(function(){
       data: $data,
       url: path
     }).done(function(response){
-      console.log(response)
-      $('#ingredients-div').empty();
-      $('#ingredients-div').append(response);
+      $('#ingredients-div').fadeOut('slow', function(){
+        $('#ingredients-div').empty();
+        $('#ingredients-div').append(response).fadeIn('slow');
+      });
     });
   });
 
@@ -121,13 +122,11 @@ $(document).ready(function(){
     event.preventDefault();
     $('.recipe-div').fadeOut('slow');
     $('.converter').slideUp('slow');
-    // $('.recipe-div').empty();
   });
 
   //slide toggle fluid_converter from menu bar
   $('#myNavbar').on('click', 'ul li ul #fluid', function(event){
     event.preventDefault();
-    // $('.converter').empty();
     $('.converter .col-sm-offset-4 .weights').slideUp('slow');
 
     $.ajax({
@@ -141,7 +140,6 @@ $(document).ready(function(){
       });
     });
   });
-
 
   // slide toggle weight_converter from menu bar
   $('#myNavbar').on('click', 'ul li ul #weight', function(event){
@@ -160,6 +158,12 @@ $(document).ready(function(){
       });
     });
   });
+
+  //conversions button closes either pull down menu
+  $('#myNavbar').on('click', '.conversions', function(){
+    $('.converter .col-sm-offset-4 .weights').slideUp('slow');
+    $('.converter .col-sm-offset-7 .fluids').slideUp('slow');
+  })
 
   //slide toggle temperatures from menu bar
   $('#myNavbar').on('click', '.temperatures', function(event){
