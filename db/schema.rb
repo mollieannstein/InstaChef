@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 20160422220558) do
     t.string   "past_tense_term"
     t.text     "instructions"
     t.string   "youtube_url"
+    t.string   "gif_url"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
   end
