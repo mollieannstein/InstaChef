@@ -87,6 +87,21 @@ $(document).ready(function(){
     });
   });
 
+  //append specific recipe to recipe div
+  $('.recipe-div').on('click', 'a.recipe-link', function(event){
+    event.preventDefault();
+
+    var url = $(this).attr('href');
+    $('.recipe-div').empty();
+
+    $.ajax({
+      type: 'GET',
+      url: url
+
+    }).done(function(response){
+      $('.recipe-div').append(response);
+    });
+  });
 
   //empty main div on logo click
   $('.navbar-header a').on('click', function(event){
