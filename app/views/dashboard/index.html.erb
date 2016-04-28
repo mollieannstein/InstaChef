@@ -1,12 +1,9 @@
-
-
-
 <!-- search bar -->
-<div class="main-searchbar" id="bloodhound">
+<div class="main-searchbar">
 <%= form_tag recipes_path, method: :get, id: "search-form" do %>
 <span class="input-group input-group-lg form-inline">
   <span class="input-group-addon glyphicon glyphicon-search"></span>
-    <%= text_field_tag :search, params[:search], placeholder: 'Find a recipe...', class: 'typeahead form-control'%>
+    <%= text_field_tag :search, params[:search], placeholder: 'Find a recipe...', class: 'form-control'%>
 <% end %>
 </div>
 
