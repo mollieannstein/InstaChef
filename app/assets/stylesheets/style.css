@@ -46,11 +46,11 @@ h4 {
 .container-fluid {
     padding: 60px 50px;
     border-radius: 10px;
+    margin: 20px 0px;
 }
 
 .container {
   margin-bottom: 0;
-  padding-bottom: 20px;
   padding: 0px 50px 30px 50px;
 }
 
@@ -59,6 +59,19 @@ h4 {
     opacity: .9;
     border-radius: 20px;
     margin: 40px;
+}
+
+.drop-down {
+  margin: 0px 0px 0px 52px;
+  max-width: 1158px;
+  border-radius: 3px;
+  background-color: white;
+  opacity: 1.0;
+}
+
+li.search-output > a {
+  font-family: 'Oxygen', sans-serif;
+  letter-spacing: 1px;
 }
 
 .recipe-procedure {
@@ -299,7 +312,6 @@ iframe {
 
 .meat-conversions {
   display: none;
-  margin-top: 2em;
   background-color: rgba(1, 187, 204, .4);
 }
 

@@ -159,8 +159,8 @@ $(document).ready(function(){
 
   //conversions button closes either pull down menu
   $('#myNavbar').on('click', '.conversions', function(){
-    $('.converter .col-sm-offset-4 .weights').slideUp('slow');
-    $('.converter .col-sm-offset-7 .fluids').slideUp('slow');
+    $('.converter .col-sm-offset-5 .weights').slideUp('slow');
+    $('.converter .col-sm-offset-5 .fluids').slideUp('slow');
   })
 
   //slide toggle temperatures from menu bar
