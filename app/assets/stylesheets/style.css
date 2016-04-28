@@ -53,21 +53,24 @@ h4 {
 
 #index-recipes > ol {
   padding-bottom: 10px;
-  margin: auto 90px;
+  margin: auto;
   font-size: 18px;
   color: #01BBCC;
 }
 
 #index-recipes > h2 {
-  margin: auto 80px;
-  font-size: 20px;
-  padding: 5px;
+  margin: auto;
+  font-size: 24px;
+  letter-spacing: 1px;
+  padding: 15px;
   color: #818181;
+  text-transform: capitalize;
+  font-family: 'Lily Script One', sans-serif;
 }
 
 #term, #term > a {
   color: #818181;
-  margin: auto 60px;
+  margin: auto;
   color: #01BBCC;
   font-size: 18px;
   text-align: right;
@@ -304,10 +307,18 @@ table {
   position: inherit;
 }
 
-.fluids, .weights {
-  margin: 60px auto;
-  padding: 100px;
+.fluids {
+  margin: 40px auto;
+  padding: 60px;
+  position: inline-block;
 }
+
+.weights {
+  position: inline-block;
+  padding: 60px;
+  margin: 40px auto;
+}
+
 
 #convert {
   border-radius: 10px;
