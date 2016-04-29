@@ -83,8 +83,6 @@ procedures.each do |item|
 
     if youtube_response["items"].length > 0
        p.youtube_url = Procedure.update(p.id, :youtube_url => "//www.youtube.com/embed/#{youtube_response["items"][0]["id"]["videoId"]}")
-       # p.save
-      # puts youtube_response["items"][0]["id"]["videoId"]
     end
   end
 
