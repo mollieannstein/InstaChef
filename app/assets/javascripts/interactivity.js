@@ -30,4 +30,11 @@ $(document).ready(function() {
       $
     });
 
+// +     $(window).resize(function(){
+// +         if($(this).width() >= 200){
+// +             $.backstretch("../assets/images/board.png", {speed: 150});
+// +         }
+// +      })
+// +      .resize();//trigger resize on page load
+
 });
