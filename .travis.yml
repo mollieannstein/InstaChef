@@ -6,8 +6,8 @@ services:
 - postgresql
 
 before_script:
-- psql -c 'create database travis_ci_test;' -U postgres
+- psql -c 'create database instaChef_test;' -U postgres
 
 test:
   adapter: postgresql
-  database: travis_ci_test
+  database: instaChef_test
